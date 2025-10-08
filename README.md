@@ -2,6 +2,60 @@
 
 A beautiful, modern marketing website for CustomBank - a professional banking simulation mobile app with 10,000+ users and 200 premium subscribers.
 
+---
+
+## 📡 Deployment Status
+
+**Last Updated:** October 8, 2025
+
+### ✅ Completed
+- [x] Website built and tested locally
+- [x] Code committed to GitHub: [bobbyburns1989/CustomBankWebSite](https://github.com/bobbyburns1989/CustomBankWebSite)
+- [x] Deployed to Vercel
+- [x] Custom domains added to Vercel:
+  - `custombank.us`
+  - `www.custombank.us`
+- [x] DNS records configuration initiated in GoDaddy
+
+### ⏳ In Progress
+- [ ] **Waiting for GoDaddy DNS verification** (Est. 1 hour)
+  - Status: "We're checking your settings"
+  - GoDaddy is verifying domain ownership and DNS records
+  - Check back at: ~4:30 PM
+
+### 📋 DNS Records Configured
+
+**A Record (custombank.us):**
+```
+Type: A
+Name: @
+Value: 216.198.79.1
+```
+
+**CNAME Record (www.custombank.us):**
+```
+Type: CNAME
+Name: www
+Value: d26885344f7b750ea.vercel-dns-017.com.
+```
+
+### 🔗 URLs
+
+- **Vercel Preview:** `custom-bank-web-site.vercel.app` (active)
+- **Production Domain:** `custombank.us` (pending DNS)
+- **WWW Subdomain:** `www.custombank.us` (pending DNS)
+- **GitHub Repo:** https://github.com/bobbyburns1989/CustomBankWebSite
+
+### ⏭️ Next Steps
+
+1. ✅ Wait for GoDaddy verification (in progress)
+2. Once verified, click "Refresh" in Vercel domains panel
+3. Test `custombank.us` in browser
+4. Verify SSL certificate is active (automatic via Vercel)
+5. Update app store links in HTML when apps are published
+
+---
+
 ## 🚀 Quick Start
 
 ### Local Development
