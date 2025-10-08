@@ -17,6 +17,8 @@ A beautiful, modern marketing website for CustomBank - a professional banking si
   - `www.custombank.us`
 - [x] DNS records configuration initiated in GoDaddy
 - [x] Real app store links added (iOS & Android)
+- [x] Privacy Policy page created
+- [x] Terms of Service page created
 
 ### ⏳ In Progress
 - [ ] **Waiting for GoDaddy DNS verification** (Est. 1 hour)
