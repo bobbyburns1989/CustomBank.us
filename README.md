@@ -19,6 +19,7 @@ A beautiful, modern marketing website for CustomBank - a professional banking si
 - [x] Real app store links added (iOS & Android)
 - [x] Privacy Policy page created
 - [x] Terms of Service page created
+- [x] Favicons and PWA manifest added
 
 ### ⏳ In Progress
 - [ ] **Waiting for GoDaddy DNS verification** (Est. 1 hour)
