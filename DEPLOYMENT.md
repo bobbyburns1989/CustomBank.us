@@ -38,13 +38,16 @@
 - ✅ Located domain: custombank.us
 - ✅ Added A record: `@` → `216.198.79.1`
 - ✅ Added CNAME record: `www` → `d26885344f7b750ea.vercel-dns-017.com.`
-- ⏳ **Waiting for GoDaddy verification** (1 hour estimated)
+- ⏳ **Waiting for DNS propagation** (24-48 hours estimated)
 
-#### ~5:00 PM - Expected Completion
-- ⏳ GoDaddy DNS verification completes
+#### October 9-10, 2025 - Expected Completion
+- ⏳ DNS propagation completes globally
+- ⏳ GoDaddy domain verification completes
 - ⏳ Vercel domain status changes to "Valid Configuration"
 - ⏳ SSL certificate automatically provisioned
 - ⏳ Website live at custombank.us
+
+**Note:** New domains typically require 24-48 hours for DNS records to propagate globally. Check status at: https://dnschecker.org/#A/custombank.us
 
 ---
 
@@ -147,9 +150,11 @@ https://dnschecker.org
 **Problem:** `custombank.us` shows "DNS_PROBE_FINISHED_NXDOMAIN"
 
 **Solutions:**
-1. Wait longer (DNS can take up to 48 hours, usually < 1 hour)
-2. Check DNS records in GoDaddy are correct
-3. Flush local DNS cache:
+1. **Wait for DNS propagation** - New domains typically require 24-48 hours for global propagation. Check progress at https://dnschecker.org/#A/custombank.us
+2. Check DNS records in GoDaddy are correct:
+   - A record: `@` → `216.198.79.1`
+   - CNAME record: `www` → `d26885344f7b750ea.vercel-dns-017.com.`
+3. Flush local DNS cache (after waiting 24+ hours):
    ```bash
    # macOS
    sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder
@@ -369,6 +374,7 @@ GoDaddy: (480) 463-8641
 
 ---
 
-**Status:** 🟡 Waiting for DNS verification
-**ETA:** ~5:00 PM, October 8, 2025
+**Status:** 🟡 Waiting for DNS propagation
+**ETA:** October 9-10, 2025 (24-48 hours from DNS configuration)
+**Check Status:** https://dnschecker.org/#A/custombank.us
 **Next Update:** After DNS propagation completes

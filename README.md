@@ -22,10 +22,12 @@ A beautiful, modern marketing website for CustomBank - a professional banking si
 - [x] Favicons and PWA manifest added
 
 ### ⏳ In Progress
-- [ ] **Waiting for GoDaddy DNS verification** (Est. 1 hour)
-  - Status: "We're checking your settings"
-  - GoDaddy is verifying domain ownership and DNS records
-  - Check back at: ~4:30 PM
+- [ ] **Waiting for GoDaddy DNS propagation** (Est. 24-48 hours)
+  - Status: DNS records added, waiting for global propagation
+  - GoDaddy verification in progress
+  - **Note:** New domains require 24-48 hours for DNS to propagate globally
+  - Expected completion: October 9-10, 2025
+  - Check status: https://dnschecker.org/#A/custombank.us
 
 ### 📋 DNS Records Configured
 
