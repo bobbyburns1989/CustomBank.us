@@ -1,0 +1,13 @@
+/* ===================================
+   FAQ Section
+   ================================== */
+
+.faq {
+    padding: var(--section-padding) 0;
+    background: var(--white);
+}
+
+.faq-list {
+    max-width: 800px;
+    margin: 0 auto;
+}

@@ -1,0 +1,29 @@
+/* ===================================
+   CustomBank - Main Stylesheet
+   Modular CSS Architecture
+   ================================== */
+
+/* Base Styles - Load first */
+@import url('base/variables.css');
+@import url('base/reset.css');
+@import url('base/typography.css');
+
+/* Components - Reusable UI elements */
+@import url('components/buttons.css');
+@import url('components/navbar.css');
+@import url('components/footer.css');
+@import url('components/cards.css');
+
+/* Sections - Page-specific layouts */
+@import url('sections/hero.css');
+@import url('sections/features.css');
+@import url('sections/screenshots.css');
+@import url('sections/pricing.css');
+@import url('sections/testimonials.css');
+@import url('sections/faq.css');
+@import url('sections/cta.css');
+
+/* Utilities - Helpers and overrides (load last) */
+@import url('utils/animations.css');
+@import url('utils/helpers.css');
+@import url('utils/responsive.css');  /* Responsive must be last */

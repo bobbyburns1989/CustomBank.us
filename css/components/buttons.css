@@ -1,0 +1,65 @@
+/* ===================================
+   Button Styles
+   ================================== */
+
+.btn-primary,
+.btn-secondary,
+.btn-primary-small,
+.btn-primary-full,
+.btn-secondary-full {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.875rem 1.75rem;
+    font-size: 1rem;
+    font-weight: var(--font-weight-semibold);
+    border-radius: var(--button-radius);
+    border: none;
+    cursor: pointer;
+    transition: all var(--transition-base);
+    text-transform: none;
+}
+
+.btn-primary,
+.btn-primary-full {
+    background: var(--accent);
+    color: var(--white);
+}
+
+.btn-primary:hover,
+.btn-primary-full:hover {
+    background: #2563EB;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+.btn-secondary,
+.btn-secondary-full {
+    background: var(--gray-800);
+    color: var(--white);
+}
+
+.btn-secondary:hover,
+.btn-secondary-full:hover {
+    background: var(--gray-700);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+.btn-primary-small {
+    background: var(--accent);
+    color: var(--white);
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+}
+
+.btn-primary-full,
+.btn-secondary-full {
+    width: 100%;
+}
+
+/* Logo Icon Class (moved from inline styles) */
+.logo-icon {
+    border-radius: var(--logo-radius);
+}
