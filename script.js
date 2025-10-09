@@ -3,6 +3,10 @@
 // Interactions, animations, and functionality
 // ===================================
 
+// Global variables
+let autoScrollInterval = null;
+let premiumButtonInterval = null;
+
 // ===================================
 // Mobile Menu Toggle
 // ===================================
@@ -92,7 +96,7 @@ if (screenshotTrack && prevBtn && nextBtn) {
     });
 
     // Auto-scroll carousel every 5 seconds
-    let autoScrollInterval = setInterval(() => {
+    autoScrollInterval = setInterval(() => {
         const maxScroll = screenshotTrack.scrollWidth - screenshotTrack.clientWidth;
 
         if (screenshotTrack.scrollLeft >= maxScroll) {
@@ -238,7 +242,7 @@ testimonialCards.forEach((card, index) => {
 // ===================================
 const premiumButton = document.querySelector('.pricing-card-featured .btn-primary-full');
 if (premiumButton) {
-    setInterval(() => {
+    premiumButtonInterval = setInterval(() => {
         premiumButton.style.animation = 'pulse 0.5s ease';
         setTimeout(() => {
             premiumButton.style.animation = '';
@@ -246,40 +250,28 @@ if (premiumButton) {
     }, 5000);
 }
 
-// Add pulse keyframe animation dynamically
-const style = document.createElement('style');
-style.textContent = `
-    @keyframes pulse {
-        0%, 100% {
-            transform: scale(1);
+// Add pulse keyframe animation dynamically (only if not already added)
+if (!document.getElementById('pulse-animation-style')) {
+    const style = document.createElement('style');
+    style.id = 'pulse-animation-style';
+    style.textContent = `
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
         }
-        50% {
-            transform: scale(1.05);
-        }
-    }
-`;
-document.head.appendChild(style);
-
-// ===================================
-// Form Validation (if newsletter added as bonus)
-// ===================================
-const newsletterForm = document.querySelector('#newsletter-form');
-if (newsletterForm) {
-    newsletterForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        const emailInput = newsletterForm.querySelector('input[type="email"]');
-        const email = emailInput.value;
-
-        // Basic email validation
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (emailRegex.test(email)) {
-            alert('Thank you for subscribing! (This is a demo)');
-            emailInput.value = '';
-        } else {
-            alert('Please enter a valid email address');
-        }
-    });
+    `;
+    document.head.appendChild(style);
 }
+
+// ===================================
+// Form Validation
+// ===================================
+// Newsletter form code removed - form not present in HTML
+// Add back if newsletter signup feature is implemented
 
 // ===================================
 // Keyboard Navigation Enhancements
@@ -325,9 +317,8 @@ const downloadButtons = document.querySelectorAll('a[href*="apple.com"], a[href*
 downloadButtons.forEach(button => {
     button.addEventListener('click', (e) => {
         const platform = button.href.includes('apple') ? 'iOS' : 'Android';
-        console.log(`Download clicked: ${platform}`);
 
-        // Placeholder for analytics tracking
+        // Analytics tracking placeholder
         // Example: gtag('event', 'download_click', { platform: platform });
 
         // If href is "#", prevent default and show coming soon message
@@ -339,10 +330,11 @@ downloadButtons.forEach(button => {
 });
 
 // ===================================
-// Console Welcome Message
+// Console Welcome Message (Development Only)
 // ===================================
-console.log('%c👋 Welcome to CustomBank!', 'font-size: 20px; font-weight: bold; color: #3B82F6;');
-console.log('%cInterested in the code? Check out our GitHub: https://github.com/custombank', 'font-size: 14px; color: #6B7280;');
+// Uncomment for development:
+// console.log('%c👋 Welcome to CustomBank!', 'font-size: 20px; font-weight: bold; color: #3B82F6;');
+// console.log('%cInterested in the code? Check out our GitHub: https://github.com/custombank', 'font-size: 14px; color: #6B7280;');
 
 // ===================================
 // Detect if user prefers reduced motion
@@ -364,12 +356,13 @@ if (prefersReducedMotion) {
 // ===================================
 window.addEventListener('load', () => {
     // Performance tracking (placeholder)
-    if ('performance' in window) {
-        const perfData = performance.getEntriesByType('navigation')[0];
-        if (perfData) {
-            console.log(`Page loaded in ${Math.round(perfData.loadEventEnd - perfData.fetchStart)}ms`);
-        }
-    }
+    // Uncomment for development:
+    // if ('performance' in window) {
+    //     const perfData = performance.getEntriesByType('navigation')[0];
+    //     if (perfData) {
+    //         console.log(`Page loaded in ${Math.round(perfData.loadEventEnd - perfData.fetchStart)}ms`);
+    //     }
+    // }
 });
 
 // ===================================
@@ -388,16 +381,59 @@ document.addEventListener('keydown', (e) => {
             document.body.style.animation = '';
         }, 5000);
 
-        // Add rainbow animation
-        const rainbowStyle = document.createElement('style');
-        rainbowStyle.textContent = `
-            @keyframes rainbow {
-                0% { filter: hue-rotate(0deg); }
-                100% { filter: hue-rotate(360deg); }
-            }
-        `;
-        document.head.appendChild(rainbowStyle);
+        // Add rainbow animation (only if not already added)
+        if (!document.getElementById('rainbow-animation-style')) {
+            const rainbowStyle = document.createElement('style');
+            rainbowStyle.id = 'rainbow-animation-style';
+            rainbowStyle.textContent = `
+                @keyframes rainbow {
+                    0% { filter: hue-rotate(0deg); }
+                    100% { filter: hue-rotate(360deg); }
+                }
+            `;
+            document.head.appendChild(rainbowStyle);
+        }
 
         alert('🎉 You found the secret! Premium unlocked! (Just kidding)');
+    }
+});
+
+// ===================================
+// Cleanup on Page Unload
+// ===================================
+window.addEventListener('beforeunload', () => {
+    // Clear all intervals to prevent memory leaks
+    if (autoScrollInterval) {
+        clearInterval(autoScrollInterval);
+    }
+    if (premiumButtonInterval) {
+        clearInterval(premiumButtonInterval);
+    }
+});
+
+// ===================================
+// Pause Carousel When Tab Not Visible
+// ===================================
+document.addEventListener('visibilitychange', () => {
+    if (screenshotTrack) {
+        if (document.hidden) {
+            // Pause auto-scroll when tab is not visible
+            if (autoScrollInterval) {
+                clearInterval(autoScrollInterval);
+                autoScrollInterval = null;
+            }
+        } else {
+            // Resume auto-scroll when tab becomes visible
+            if (!autoScrollInterval) {
+                autoScrollInterval = setInterval(() => {
+                    const maxScroll = screenshotTrack.scrollWidth - screenshotTrack.clientWidth;
+                    if (screenshotTrack.scrollLeft >= maxScroll) {
+                        screenshotTrack.scrollTo({ left: 0, behavior: 'smooth' });
+                    } else {
+                        screenshotTrack.scrollBy({ left: 332, behavior: 'smooth' });
+                    }
+                }, 5000);
+            }
+        }
     }
 });
