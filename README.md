@@ -1,3 +1,4 @@
+# CustomBank - Banking Simulator
 # CustomBank Marketing Website
 
 A beautiful, modern marketing website for CustomBank - a professional banking simulation mobile app with 10,000+ users and 200 premium subscribers.
