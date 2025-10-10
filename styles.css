@@ -483,39 +483,85 @@ p {
 /* Feature Cards */
 .feature-card {
     background: var(--white);
-    padding: 2.5rem;
-    border-radius: var(--border-radius-large);
+    padding: 3rem;
+    border-radius: 1.25rem;
     box-shadow: var(--shadow-md);
     transition: all var(--transition-base);
+    border: 1px solid transparent;
+    position: relative;
+    overflow: hidden;
+}
+
+.feature-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--gradient-accent);
+    opacity: 0;
+    transition: opacity var(--transition-base);
 }
 
 .feature-card:hover {
     transform: translateY(-8px);
     box-shadow: var(--shadow-xl);
+    border-color: rgba(59, 130, 246, 0.15);
+}
+
+.feature-card:hover::before {
+    opacity: 1;
 }
 
 .feature-icon {
-    width: 72px;
-    height: 72px;
+    width: 80px;
+    height: 80px;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: rgba(59, 130, 246, 0.1);
-    border-radius: var(--border-radius-large);
-    color: var(--accent);
-    margin-bottom: 1.75rem;
+    background: var(--gradient-accent);
+    border-radius: 1.25rem;
+    color: var(--white);
+    margin-bottom: 2rem;
+    transition: all var(--transition-base);
+    box-shadow: 0 8px 16px rgba(59, 130, 246, 0.25);
+    position: relative;
+}
+
+.feature-icon::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 1.25rem;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), transparent);
+    pointer-events: none;
+}
+
+.feature-card:hover .feature-icon {
+    transform: scale(1.08) rotate(3deg);
+    box-shadow: 0 12px 24px rgba(59, 130, 246, 0.35);
+}
+
+.feature-icon svg {
+    position: relative;
+    z-index: 1;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
 }
 
 .feature-card h3 {
     margin-bottom: 1rem;
     color: var(--dark);
     font-size: 1.5rem;
+    font-weight: var(--font-weight-bold);
+    letter-spacing: -0.01em;
 }
 
 .feature-card p {
     color: var(--gray-600);
     margin-bottom: 0;
-    line-height: 1.7;
+    line-height: 1.75;
+    font-size: 1.0625rem;
 }
 
 /* Pricing Cards */
@@ -970,7 +1016,7 @@ p {
 .features-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 2.5rem;
+    gap: 3rem;
     margin-top: 1rem;
 }
 /* ===================================
