@@ -1803,13 +1803,37 @@ button:focus {
         display: none;
     }
 
+    /* Hero phone mockup - reduce size on mobile */
+    .phone-mockup {
+        width: 250px;
+        height: 500px;
+        margin: 0 auto;
+    }
+
     .features-grid {
         grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    /* Feature cards - reduce padding on mobile */
+    .feature-card {
+        padding: 2rem;
+    }
+
+    /* Store badges - slightly smaller on mobile */
+    .store-badge img {
+        height: 48px;
     }
 
     .faq-grid {
         grid-template-columns: 1fr;
         gap: 1rem;
+    }
+
+    /* FAQ items - larger touch targets */
+    .faq-question {
+        padding: 1.25rem;
+        font-size: 1rem;
     }
 
     .stats-row {
@@ -1892,6 +1916,191 @@ button:focus {
         to {
             transform: translateY(0);
         }
+    }
+}
+
+/* Small Mobile (480px and below) - iPhone SE, small Android phones */
+@media (max-width: 480px) {
+    :root {
+        --section-padding: 40px;
+        --container-padding: 16px;
+    }
+
+    /* Typography - optimize for small screens */
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.75rem;
+    }
+
+    h3 {
+        font-size: 1.25rem;
+    }
+
+    .section-title {
+        font-size: 1.75rem;
+        margin-bottom: 1rem;
+    }
+
+    .section-subtitle {
+        font-size: 0.9375rem;
+        margin-bottom: 2.5rem;
+    }
+
+    /* Hero section - compact for small screens */
+    .hero-title {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.125rem;
+        margin-bottom: 2rem;
+    }
+
+    .phone-mockup {
+        width: 220px;
+        height: 440px;
+    }
+
+    /* Feature cards - more compact */
+    .feature-card {
+        padding: 1.5rem;
+    }
+
+    .feature-icon {
+        width: 64px;
+        height: 64px;
+        margin-bottom: 1.5rem;
+    }
+
+    .feature-icon svg {
+        width: 40px;
+        height: 40px;
+    }
+
+    .feature-card h3 {
+        font-size: 1.25rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .feature-card p {
+        font-size: 0.9375rem;
+        line-height: 1.6;
+    }
+
+    /* Store badges - smaller for small phones */
+    .store-badge img {
+        height: 44px;
+    }
+
+    /* Pricing cards - more compact */
+    .pricing-card {
+        padding: 2rem 1.5rem;
+    }
+
+    .price-amount {
+        font-size: 2.5rem;
+    }
+
+    /* Testimonials - more compact */
+    .testimonial-card {
+        padding: 1.5rem;
+    }
+
+    .testimonial-quote {
+        font-size: 1rem;
+    }
+
+    /* FAQ - optimize for small screens */
+    .faq-question {
+        padding: 1rem;
+        font-size: 0.9375rem;
+    }
+
+    .faq-category-icon {
+        width: 20px;
+        height: 20px;
+    }
+
+    .faq-answer p {
+        padding: 0 1rem 1rem;
+        font-size: 0.9375rem;
+    }
+
+    /* Case studies - more compact */
+    .case-study-card {
+        padding: 1.25rem;
+    }
+
+    .avatar-photo {
+        width: 56px;
+        height: 56px;
+    }
+
+    .case-study-meta h3 {
+        font-size: 1.25rem;
+    }
+
+    .case-study-content h4 {
+        font-size: 1.5rem;
+    }
+
+    .case-study-quote {
+        font-size: 1rem;
+        padding-left: 1rem;
+    }
+
+    /* CTA section - optimize for small screens */
+    .cta-title {
+        font-size: 1.75rem;
+    }
+
+    .cta-subtitle {
+        font-size: 1rem;
+    }
+
+    /* Footer - more compact */
+    .footer {
+        padding: 3rem 0 1.5rem;
+    }
+
+    .footer-grid {
+        gap: 2rem;
+    }
+
+    /* Badge items - stack better on small screens */
+    .badge-item {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.5rem;
+    }
+
+    /* Trust indicators - smaller text */
+    .trust-indicators {
+        font-size: 0.8125rem;
+    }
+
+    /* Buttons - ensure minimum touch target size */
+    .btn-primary,
+    .btn-secondary,
+    .btn-primary-small,
+    .btn-primary-full,
+    .btn-secondary-full {
+        min-height: 44px;
+        padding: 0.875rem 1.5rem;
+        font-size: 0.9375rem;
+    }
+
+    /* Metric items - smaller on very small screens */
+    .metric-item strong {
+        font-size: 1.75rem;
+    }
+
+    .metric-item span {
+        font-size: 0.8125rem;
     }
 }
 
