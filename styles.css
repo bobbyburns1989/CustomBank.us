@@ -303,15 +303,19 @@ p {
     display: inline-block;
     transition: all var(--transition-base);
     line-height: 0;
+    width: 168px;
+    height: 56px;
 }
 
 .store-badge img {
     height: 56px !important;
     width: 168px !important;
-    display: block;
-    object-fit: contain;
+    min-height: 56px;
+    min-width: 168px;
     max-height: 56px;
     max-width: 168px;
+    object-fit: contain;
+    display: block !important;
 }
 
 .store-badge:hover {
@@ -1850,9 +1854,18 @@ button:focus {
     }
 
     /* Store badges - slightly smaller on mobile */
+    .store-badge {
+        width: 144px;
+        height: 48px;
+    }
+
     .store-badge img {
         height: 48px !important;
         width: 144px !important;
+        min-height: 48px;
+        min-width: 144px;
+        max-height: 48px;
+        max-width: 144px;
     }
 
     .faq-grid {
@@ -2035,9 +2048,18 @@ button:focus {
     }
 
     /* Store badges - smaller for small phones */
+    .store-badge {
+        width: 132px;
+        height: 44px;
+    }
+
     .store-badge img {
         height: 44px !important;
         width: 132px !important;
+        min-height: 44px;
+        min-width: 132px;
+        max-height: 44px;
+        max-width: 132px;
     }
 
     /* Pricing cards - more compact */
