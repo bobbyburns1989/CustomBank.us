@@ -1,7 +1,7 @@
 # CustomBank - Banking Simulator
 # CustomBank Marketing Website
 
-A beautiful, modern marketing website for CustomBank - a professional banking simulation mobile app with 10,000+ users and 200 premium subscribers.
+A beautiful, modern marketing website for CustomBank - a professional banking simulation mobile app with 50,000+ users.
 
 ---
 
@@ -18,8 +18,8 @@ A beautiful, modern marketing website for CustomBank - a professional banking si
   - `www.custombank.us`
 - [x] DNS records configuration initiated in GoDaddy
 - [x] Real app store links added (iOS & Android)
-- [x] Privacy Policy page created
-- [x] Terms of Service page created
+- [x] CustomBank Privacy Policy & Terms of Service pages created
+- [x] BetTrndz Privacy Policy & Terms of Service pages created
 - [x] Favicons and PWA manifest added
 
 ### ⏳ In Progress
@@ -109,14 +109,49 @@ Value: d26885344f7b750ea.vercel-dns-017.com.
 
 ```
 custombank-website/
-├── index.html          # Main HTML file with all sections
-├── styles.css          # Complete styling (responsive, animations)
-├── script.js           # Interactive functionality
-├── README.md           # This file
+├── index.html              # Main HTML file with all sections
+├── styles.css              # Complete styling (responsive, animations)
+├── script.js               # Interactive functionality
+├── privacy.html            # CustomBank Privacy Policy
+├── terms.html              # CustomBank Terms of Service
+├── bettrndz-privacy.html   # BetTrndz Privacy Policy (for app)
+├── bettrndz-terms.html     # BetTrndz Terms of Service (for app)
+├── legal-pages.css         # Styling for legal documents
+├── README.md               # This file
 └── assets/
-    ├── images/         # Placeholder for app screenshots
-    └── icons/          # Placeholder for custom icons
+    ├── images/             # App screenshots and graphics
+    └── icons/              # Custom icons and favicons
 ```
+
+---
+
+## 📄 BetTrndz Legal Pages
+
+This website also hosts legal compliance documents for the **BetTrndz** mobile app (sports betting analytics platform). These pages are not linked from the main CustomBank website navigation and are intended for integration within the BetTrndz mobile app.
+
+### Legal Document URLs
+
+**Privacy Policy:**
+- `https://custombank.us/bettrndz-privacy.html`
+- `https://www.custombank.us/bettrndz-privacy.html`
+
+**Terms of Service:**
+- `https://custombank.us/bettrndz-terms.html`
+- `https://www.custombank.us/bettrndz-terms.html`
+
+### Purpose
+
+These standalone legal pages are designed to:
+- Meet App Store and Google Play legal requirements
+- Be embedded in the BetTrndz app settings or onboarding flow
+- Provide GDPR/CCPA compliance documentation
+- Link back to `www.bettrndz.com` (the BetTrndz main website)
+
+### Contact Information
+
+- **Legal inquiries**: legal@bettrndz.com
+- **Privacy inquiries**: privacy@bettrndz.com
+- **Website**: www.bettrndz.com
 
 ---
 
@@ -128,7 +163,7 @@ custombank-website/
    - Animated gradient background
    - Floating phone mockup with shimmer effect
    - CTA buttons for App Store and Google Play
-   - Trust indicators (10,000+ users, 4.6★ rating)
+   - Trust indicators (50,000+ users, 4.6★ rating)
 
 2. **Features Section** (9 feature cards)
    - Multiple account types
