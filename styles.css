@@ -298,6 +298,28 @@ p {
     width: 100%;
 }
 
+/* Store Badge Styling */
+.store-badge {
+    display: inline-block;
+    transition: all var(--transition-base);
+    line-height: 0;
+}
+
+.store-badge img {
+    height: 56px;
+    width: auto;
+    display: block;
+}
+
+.store-badge:hover {
+    transform: translateY(-2px) scale(1.02);
+    filter: brightness(1.05);
+}
+
+.store-badge:active {
+    transform: translateY(0) scale(0.98);
+}
+
 /* Logo Icon Class (moved from inline styles) */
 .logo-icon {
     border-radius: var(--logo-radius);
@@ -926,19 +948,19 @@ p {
     line-height: 1.65;
 }
 
-.hero-cta {
-    display: flex;
-    gap: 1rem;
-    margin-bottom: 2rem;
-    flex-wrap: wrap;
-}
-
 .trust-indicators {
     display: flex;
     gap: 1rem;
     align-items: center;
     color: var(--gray-600);
     font-size: 0.875rem;
+    margin-bottom: 1.5rem;
+}
+
+.hero-cta {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
 }
 
 .separator {
@@ -1545,6 +1567,22 @@ p {
 
 .fade-in {
     animation: fadeIn 1s ease-out;
+}
+
+/* Slide Up Animation for Hero Image */
+@keyframes slideUpFade {
+    from {
+        opacity: 0;
+        transform: translateY(60px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.hero-image .fade-in {
+    animation: slideUpFade 1.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 /* Shimmer animation for buttons */
