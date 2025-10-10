@@ -311,6 +311,10 @@ p {
     display: block;
 }
 
+.store-badge img[src*="google-play"] {
+    height: 40px;
+}
+
 .store-badge:hover {
     transform: translateY(-2px) scale(1.02);
     filter: brightness(1.05);
