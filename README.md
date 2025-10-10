@@ -11,7 +11,7 @@ A beautiful, modern marketing website for CustomBank - a professional banking si
 
 ### ✅ Completed
 - [x] Website built and tested locally
-- [x] Code committed to GitHub: [bobbyburns1989/CustomBankWebSite](https://github.com/bobbyburns1989/CustomBankWebSite)
+- [x] Code committed to GitHub: [bobbyburns1989/CustomBank.us](https://github.com/bobbyburns1989/CustomBank.us)
 - [x] Deployed to Vercel
 - [x] Custom domains added to Vercel:
   - `custombank.us`
