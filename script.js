@@ -4,7 +4,6 @@
 // ===================================
 
 // Global variables
-let autoScrollInterval = null;
 let premiumButtonInterval = null;
 
 // ===================================
@@ -68,61 +67,44 @@ window.addEventListener('scroll', () => {
         navbar.style.boxShadow = '0 1px 2px 0 rgba(0, 0, 0, 0.05)';
     }
 
+    // Mobile sticky CTA (show after scrolling past hero)
+    if (window.innerWidth <= 768) {
+        const hero = document.querySelector('.hero');
+        if (hero) {
+            const heroBottom = hero.offsetTop + hero.offsetHeight;
+            const stickyCTA = document.querySelector('.mobile-sticky-cta');
+
+            if (!stickyCTA) {
+                createMobileStickyCTA();
+            } else {
+                if (currentScroll > heroBottom) {
+                    stickyCTA.classList.add('show');
+                } else {
+                    stickyCTA.classList.remove('show');
+                }
+            }
+        }
+    }
+
     lastScroll = currentScroll;
 });
 
 // ===================================
-// Screenshot Carousel Navigation
+// Create Mobile Sticky CTA
 // ===================================
-const screenshotTrack = document.querySelector('.screenshot-track');
-const prevBtn = document.querySelector('.carousel-btn.prev');
-const nextBtn = document.querySelector('.carousel-btn.next');
-
-if (screenshotTrack && prevBtn && nextBtn) {
-    const scrollAmount = 332; // 300px width + 32px gap
-
-    prevBtn.addEventListener('click', () => {
-        screenshotTrack.scrollBy({
-            left: -scrollAmount,
-            behavior: 'smooth'
-        });
-    });
-
-    nextBtn.addEventListener('click', () => {
-        screenshotTrack.scrollBy({
-            left: scrollAmount,
-            behavior: 'smooth'
-        });
-    });
-
-    // Auto-scroll carousel every 5 seconds
-    autoScrollInterval = setInterval(() => {
-        const maxScroll = screenshotTrack.scrollWidth - screenshotTrack.clientWidth;
-
-        if (screenshotTrack.scrollLeft >= maxScroll) {
-            screenshotTrack.scrollTo({ left: 0, behavior: 'smooth' });
-        } else {
-            screenshotTrack.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-        }
-    }, 5000);
-
-    // Pause auto-scroll on hover
-    screenshotTrack.addEventListener('mouseenter', () => {
-        clearInterval(autoScrollInterval);
-    });
-
-    screenshotTrack.addEventListener('mouseleave', () => {
-        autoScrollInterval = setInterval(() => {
-            const maxScroll = screenshotTrack.scrollWidth - screenshotTrack.clientWidth;
-
-            if (screenshotTrack.scrollLeft >= maxScroll) {
-                screenshotTrack.scrollTo({ left: 0, behavior: 'smooth' });
-            } else {
-                screenshotTrack.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-            }
-        }, 5000);
-    });
+function createMobileStickyCTA() {
+    if (window.innerWidth <= 768 && !document.querySelector('.mobile-sticky-cta')) {
+        const stickyCTA = document.createElement('div');
+        stickyCTA.className = 'mobile-sticky-cta';
+        stickyCTA.innerHTML = `
+            <a href="https://apps.apple.com/us/app/custombank/id6738460636" class="btn-primary" style="width: 100%; justify-content: center;" target="_blank" rel="noopener noreferrer">
+                Download CustomBank
+            </a>
+        `;
+        document.body.appendChild(stickyCTA);
+    }
 }
+
 
 // ===================================
 // FAQ Accordion
@@ -282,15 +264,6 @@ document.addEventListener('keydown', (e) => {
         navLinks.classList.remove('active');
         mobileMenuToggle.classList.remove('active');
     }
-
-    // Arrow keys for carousel navigation
-    if (screenshotTrack) {
-        if (e.key === 'ArrowLeft' && document.activeElement === screenshotTrack) {
-            prevBtn.click();
-        } else if (e.key === 'ArrowRight' && document.activeElement === screenshotTrack) {
-            nextBtn.click();
-        }
-    }
 });
 
 // ===================================
@@ -342,19 +315,37 @@ downloadButtons.forEach(button => {
 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 if (prefersReducedMotion) {
-    // Disable auto-scroll for carousel
-    if (autoScrollInterval) {
-        clearInterval(autoScrollInterval);
-    }
-
     // Reduce animation durations
     document.documentElement.style.setProperty('--transition-base', '50ms');
 }
 
 // ===================================
+// Scroll Progress Bar
+// ===================================
+function createScrollProgressBar() {
+    if (!document.querySelector('.scroll-progress')) {
+        const progressBar = document.createElement('div');
+        progressBar.className = 'scroll-progress';
+        document.body.appendChild(progressBar);
+    }
+}
+
+window.addEventListener('scroll', () => {
+    const progressBar = document.querySelector('.scroll-progress');
+    if (progressBar) {
+        const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const scrolled = (window.scrollY / windowHeight) * 100;
+        progressBar.style.width = scrolled + '%';
+    }
+});
+
+// ===================================
 // Page Load Performance Tracking
 // ===================================
 window.addEventListener('load', () => {
+    // Create scroll progress bar
+    createScrollProgressBar();
+
     // Performance tracking (placeholder)
     // Uncomment for development:
     // if ('performance' in window) {
@@ -403,37 +394,8 @@ document.addEventListener('keydown', (e) => {
 // ===================================
 window.addEventListener('beforeunload', () => {
     // Clear all intervals to prevent memory leaks
-    if (autoScrollInterval) {
-        clearInterval(autoScrollInterval);
-    }
     if (premiumButtonInterval) {
         clearInterval(premiumButtonInterval);
     }
 });
 
-// ===================================
-// Pause Carousel When Tab Not Visible
-// ===================================
-document.addEventListener('visibilitychange', () => {
-    if (screenshotTrack) {
-        if (document.hidden) {
-            // Pause auto-scroll when tab is not visible
-            if (autoScrollInterval) {
-                clearInterval(autoScrollInterval);
-                autoScrollInterval = null;
-            }
-        } else {
-            // Resume auto-scroll when tab becomes visible
-            if (!autoScrollInterval) {
-                autoScrollInterval = setInterval(() => {
-                    const maxScroll = screenshotTrack.scrollWidth - screenshotTrack.clientWidth;
-                    if (screenshotTrack.scrollLeft >= maxScroll) {
-                        screenshotTrack.scrollTo({ left: 0, behavior: 'smooth' });
-                    } else {
-                        screenshotTrack.scrollBy({ left: 332, behavior: 'smooth' });
-                    }
-                }, 5000);
-            }
-        }
-    }
-});
