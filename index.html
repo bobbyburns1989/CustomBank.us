@@ -681,100 +681,156 @@
             <h2 class="section-title">Frequently Asked Questions</h2>
             <p class="section-subtitle">Everything you need to know</p>
 
-            <div class="faq-list">
-                <div class="faq-item">
-                    <button class="faq-question" aria-expanded="false">
-                        <span>Is CustomBank a real bank?</span>
-                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <polyline points="6 9 12 15 18 9"></polyline>
-                        </svg>
-                    </button>
-                    <div class="faq-answer">
-                        <p>No, CustomBank is a simulator for educational purposes. No real money is involved.</p>
+            <div class="faq-grid">
+                <!-- Featured FAQs Column -->
+                <div class="faq-featured">
+                    <div class="faq-item faq-item-featured">
+                        <div class="faq-badge">Most Asked</div>
+                        <button class="faq-question" aria-expanded="false">
+                            <div class="faq-question-content">
+                                <svg class="faq-category-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="3" y="3" width="18" height="18" rx="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M9 3v18M3 9h18M3 15h18M15 3v18" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                <span>Is CustomBank a real bank?</span>
+                            </div>
+                            <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>No, CustomBank is a simulator for educational purposes. No real money is involved.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <div class="faq-question-content">
+                                <svg class="faq-category-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M9 12l2 2 4-4" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                <span>Is my data safe?</span>
+                            </div>
+                            <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Yes, all data is stored locally on your device. We don't collect personal or financial information.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <div class="faq-question-content">
+                                <svg class="faq-category-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="2" y="5" width="20" height="14" rx="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M2 10h20" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                <span>What's the difference between Free and Premium?</span>
+                            </div>
+                            <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Free has $1K balance limit and 1 receipt/day. Premium offers unlimited balances, receipts, and no ads for $1.99/month.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <div class="faq-question-content">
+                                <svg class="faq-category-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="2" y="3" width="20" height="14" rx="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M8 21h8M12 17v4" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                <span>What platforms are supported?</span>
+                            </div>
+                            <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>iOS 15.0+ and Android 23+ (API Level 23+)</p>
+                        </div>
                     </div>
                 </div>
 
-                <div class="faq-item">
-                    <button class="faq-question" aria-expanded="false">
-                        <span>Is my data safe?</span>
-                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <polyline points="6 9 12 15 18 9"></polyline>
-                        </svg>
-                    </button>
-                    <div class="faq-answer">
-                        <p>Yes, all data is stored locally on your device. We don't collect personal or financial information.</p>
+                <!-- Additional FAQs Column -->
+                <div class="faq-additional">
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <div class="faq-question-content">
+                                <svg class="faq-category-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M12 16v-4M12 8h.01" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                <span>Can I use receipts for official purposes?</span>
+                            </div>
+                            <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>No, receipts are for simulation only and should not be used for legal, tax, or official documentation.</p>
+                        </div>
                     </div>
-                </div>
 
-                <div class="faq-item">
-                    <button class="faq-question" aria-expanded="false">
-                        <span>What's the difference between Free and Premium?</span>
-                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <polyline points="6 9 12 15 18 9"></polyline>
-                        </svg>
-                    </button>
-                    <div class="faq-answer">
-                        <p>Free has $1K balance limit and 1 receipt/day. Premium offers unlimited balances, receipts, and no ads for $1.99/month.</p>
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <div class="faq-question-content">
+                                <svg class="faq-category-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M13.73 21a2 2 0 0 1-3.46 0" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                <span>How do I cancel my subscription?</span>
+                            </div>
+                            <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Manage subscriptions through App Store (iOS) or Google Play (Android) at any time.</p>
+                        </div>
                     </div>
-                </div>
 
-                <div class="faq-item">
-                    <button class="faq-question" aria-expanded="false">
-                        <span>Can I use receipts for official purposes?</span>
-                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <polyline points="6 9 12 15 18 9"></polyline>
-                        </svg>
-                    </button>
-                    <div class="faq-answer">
-                        <p>No, receipts are for simulation only and should not be used for legal, tax, or official documentation.</p>
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <div class="faq-question-content">
+                                <svg class="faq-category-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3M12 17h.01" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                <span>Do you offer refunds?</span>
+                            </div>
+                            <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Yes, we offer a 3-day free trial. Cancel anytime during trial for no charge.</p>
+                        </div>
                     </div>
-                </div>
 
-                <div class="faq-item">
-                    <button class="faq-question" aria-expanded="false">
-                        <span>What platforms are supported?</span>
-                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <polyline points="6 9 12 15 18 9"></polyline>
-                        </svg>
-                    </button>
-                    <div class="faq-answer">
-                        <p>iOS 15.0+ and Android 23+ (API Level 23+)</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <button class="faq-question" aria-expanded="false">
-                        <span>How do I cancel my subscription?</span>
-                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <polyline points="6 9 12 15 18 9"></polyline>
-                        </svg>
-                    </button>
-                    <div class="faq-answer">
-                        <p>Manage subscriptions through App Store (iOS) or Google Play (Android) at any time.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <button class="faq-question" aria-expanded="false">
-                        <span>Do you offer refunds?</span>
-                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <polyline points="6 9 12 15 18 9"></polyline>
-                        </svg>
-                    </button>
-                    <div class="faq-answer">
-                        <p>Yes, we offer a 3-day free trial. Cancel anytime during trial for no charge.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <button class="faq-question" aria-expanded="false">
-                        <span>Is there a family plan?</span>
-                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <polyline points="6 9 12 15 18 9"></polyline>
-                        </svg>
-                    </button>
-                    <div class="faq-answer">
-                        <p>Not yet, but multi-user support is planned for 2026.</p>
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <div class="faq-question-content">
+                                <svg class="faq-category-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <circle cx="9" cy="7" r="4" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                <span>Is there a family plan?</span>
+                            </div>
+                            <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Not yet, but multi-user support is planned for 2026.</p>
+                        </div>
                     </div>
                 </div>
             </div>
