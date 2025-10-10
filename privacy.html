@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="CustomBank Privacy Policy - Learn how we protect your data in our banking simulation app.">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self';">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://images.unsplash.com; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self';">
     <title>Privacy Policy - CustomBank</title>
 
     <!-- Favicons -->
@@ -15,123 +15,19 @@
     <link rel="manifest" href="/site.webmanifest">
     <meta name="theme-color" content="#3B82F6">
 
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="styles.css">
-
-    <style>
-        .legal-page {
-            padding: 120px 0 80px;
-            background: var(--light);
-            min-height: 100vh;
-        }
-
-        .legal-container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 0 var(--container-padding);
-        }
-
-        .legal-content {
-            background: var(--white);
-            padding: 3rem;
-            border-radius: 1rem;
-            box-shadow: var(--shadow-md);
-        }
-
-        .legal-header {
-            margin-bottom: 2rem;
-            padding-bottom: 2rem;
-            border-bottom: 2px solid var(--gray-200);
-        }
-
-        .legal-title {
-            font-size: 2.5rem;
-            color: var(--dark);
-            margin-bottom: 0.5rem;
-        }
-
-        .legal-date {
-            color: var(--gray-600);
-            font-size: 1rem;
-        }
-
-        .legal-content h2 {
-            font-size: 1.75rem;
-            color: var(--dark);
-            margin-top: 2.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .legal-content h3 {
-            font-size: 1.25rem;
-            color: var(--gray-800);
-            margin-top: 1.5rem;
-            margin-bottom: 0.75rem;
-        }
-
-        .legal-content p {
-            color: var(--gray-700);
-            line-height: 1.8;
-            margin-bottom: 1rem;
-        }
-
-        .legal-content ul, .legal-content ol {
-            color: var(--gray-700);
-            line-height: 1.8;
-            margin-bottom: 1rem;
-            padding-left: 2rem;
-        }
-
-        .legal-content li {
-            margin-bottom: 0.5rem;
-        }
-
-        .back-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            color: var(--accent);
-            text-decoration: none;
-            font-weight: 500;
-            margin-bottom: 2rem;
-            transition: color var(--transition-base);
-        }
-
-        .back-link:hover {
-            color: var(--primary);
-        }
-
-        .highlight-box {
-            background: rgba(59, 130, 246, 0.1);
-            border-left: 4px solid var(--accent);
-            padding: 1.5rem;
-            margin: 1.5rem 0;
-            border-radius: 0.5rem;
-        }
-
-        .highlight-box p {
-            margin-bottom: 0;
-        }
-
-        @media (max-width: 768px) {
-            .legal-content {
-                padding: 1.5rem;
-            }
-
-            .legal-title {
-                font-size: 2rem;
-            }
-
-            .legal-content h2 {
-                font-size: 1.5rem;
-            }
-        }
-    </style>
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="styles.css?v=20251010005307">
+    <link rel="stylesheet" href="legal-pages.css">
 </head>
 <body>
+    <!-- Progress Bar -->
+    <div class="legal-progress" id="legalProgress"></div>
+
     <!-- Navigation -->
     <nav class="navbar">
         <div class="container">
@@ -145,228 +41,374 @@
                     <span class="logo-text">CustomBank</span>
                 </a>
                 <div class="nav-links">
-                    <a href="index.html">Home</a>
                     <a href="index.html#features">Features</a>
                     <a href="index.html#pricing">Pricing</a>
+                    <a href="index.html#faq">FAQ</a>
+                    <a href="privacy.html">Privacy</a>
+                    <a href="terms.html">Terms</a>
                     <a href="index.html#download" class="btn-primary-small">Download</a>
                 </div>
             </div>
         </div>
     </nav>
 
-    <div class="legal-page">
-        <div class="legal-container">
+    <!-- Hero Section -->
+    <div class="legal-hero">
+        <div class="container">
             <a href="index.html" class="back-link">
                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor">
                     <path d="M12 16L6 10L12 4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
                 Back to Home
             </a>
-
-            <div class="legal-content">
-                <div class="legal-header">
-                    <h1 class="legal-title">CustomBank Privacy Policy</h1>
-                    <p class="legal-date">Last Updated: April 22, 2025</p>
+            <div class="legal-hero-content">
+                <div class="legal-hero-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M9 12l2 2 4-4" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
                 </div>
-
-                <h2>1. Introduction</h2>
-                <p>Welcome to CustomBank. This Privacy Policy explains how we handle your information when using our banking simulation application. We are committed to protecting your privacy while providing an entertaining and realistic banking simulation experience with advanced features like our Currency Creator system.</p>
-
-                <h2>2. Information Collection and Use</h2>
-
-                <h3>2.1 User-Provided Information</h3>
-                <ul>
-                    <li>Account credentials (PINs and authentication settings)</li>
-                    <li>Customized account information and preferences</li>
-                    <li>Bank theme selection preferences</li>
-                    <li>Virtual card customizations</li>
-                    <li>Profile settings and preferences</li>
-                    <li>Currency Creator designs and configurations</li>
-                    <li>Currency membership and participation data</li>
-                    <li>Activity completion evidence (when submitted)</li>
-                </ul>
-
-                <h3>2.2 Automatically Collected Information</h3>
-                <ul>
-                    <li>Device information (model, operating system version)</li>
-                    <li>App usage patterns and interaction statistics</li>
-                    <li>Performance metrics and crash reports</li>
-                    <li>Storage usage statistics</li>
-                    <li>Ad interaction data (for ad-based rewards)</li>
-                    <li>Subscription status (for premium features)</li>
-                </ul>
-
-                <h3>2.3 Information We DO NOT Collect</h3>
-                <div class="highlight-box">
-                    <p><strong>We do not collect:</strong></p>
-                    <ul style="margin-top: 0.5rem;">
-                        <li>Real banking credentials</li>
-                        <li>Financial account information</li>
-                        <li>Credit card numbers (except as processed by your app store for subscriptions)</li>
-                        <li>Personal identification documents</li>
-                        <li>Social security numbers</li>
-                    </ul>
-                </div>
-
-                <h2>3. Data Storage and Security</h2>
-
-                <h3>3.1 Local Storage</h3>
-                <ul>
-                    <li>Primary data is stored using SharedPreferences on your device</li>
-                    <li>Currency data is managed through the CurrencyDataIsolationService</li>
-                    <li>Data persists until app uninstallation</li>
-                    <li>No external server communication for core app functionality</li>
-                </ul>
-
-                <h3>3.2 Firebase Integration</h3>
-                <p>We use Firebase services for certain functionality, including:</p>
-                <ul>
-                    <li>Authentication (if you choose to create an account)</li>
-                    <li>Cloud Firestore (for data that may sync across devices)</li>
-                    <li>Firebase Storage (for media like currency logos)</li>
-                    <li>Firebase Analytics (for app performance and usage statistics)</li>
-                    <li>Data shared with Firebase is subject to Google's Privacy Policy</li>
-                </ul>
-
-                <h3>3.3 Security Measures</h3>
-                <ul>
-                    <li>Industry-standard encryption for local data</li>
-                    <li>Secure PIN protection</li>
-                    <li>Optional biometric authentication</li>
-                    <li>Firebase security rules for cloud data</li>
-                    <li>Automatic session timeouts</li>
-                    <li>Secure data erasure options</li>
-                </ul>
-
-                <h2>4. How We Use Your Information</h2>
-
-                <h3>4.1 Core Functionality</h3>
-                <ul>
-                    <li>Providing realistic banking simulation</li>
-                    <li>Maintaining custom account settings</li>
-                    <li>Preserving user preferences</li>
-                    <li>Managing virtual accounts and cards</li>
-                    <li>Simulating transactions</li>
-                    <li>Enabling Currency Creator functionality</li>
-                    <li>Supporting the Currency Experience system</li>
-                </ul>
-
-                <h3>4.2 Ad-Based Rewards</h3>
-                <ul>
-                    <li>Delivering relevant advertisements</li>
-                    <li>Processing reward claims</li>
-                    <li>Tracking ad interaction for reward distribution</li>
-                    <li>Ad frequency and targeting optimization</li>
-                </ul>
-
-                <h3>4.3 App Improvement</h3>
-                <ul>
-                    <li>Analyzing app performance</li>
-                    <li>Identifying potential bugs</li>
-                    <li>Optimizing user experience</li>
-                    <li>Developing new features</li>
-                    <li>Enhancing Currency Creator functionality</li>
-                </ul>
-
-                <h2>5. Data Sharing and Disclosure</h2>
-
-                <h3>5.1 Third-Party Services</h3>
-                <ul>
-                    <li>Google Firebase (for services mentioned above)</li>
-                    <li>Google Mobile Ads (for ad-based rewards)</li>
-                    <li>Unity Ads (as alternative ad provider)</li>
-                    <li>RevenueCat (for subscription management)</li>
-                    <li>Your app store provider (for premium subscription processing)</li>
-                </ul>
-
-                <h3>5.2 Currency System Sharing</h3>
-                <ul>
-                    <li>Currency creators can see membership information</li>
-                    <li>Currency members can see leaderboard data</li>
-                    <li>Activity submissions may be visible to currency administrators</li>
-                    <li>Currency invitations share limited information with recipients</li>
-                </ul>
-
-                <h3>5.3 Legal Requirements</h3>
-                <p>We may disclose information if required by law, regulation, or legal process.</p>
-
-                <h2>6. User Rights and Controls</h2>
-
-                <h3>6.1 Your Rights</h3>
-                <ul>
-                    <li>Access your locally stored data</li>
-                    <li>Modify account and currency settings</li>
-                    <li>Delete specific currencies or activities</li>
-                    <li>Control app permissions</li>
-                    <li>Opt out of analytics collection (via settings)</li>
-                    <li>Manage ad consent preferences</li>
-                </ul>
-
-                <h3>6.2 Data Retention</h3>
-                <ul>
-                    <li>Local data retained until app uninstallation</li>
-                    <li>Firebase data retained according to our data retention policies</li>
-                    <li>Currency data may persist after leaving a currency (for record-keeping)</li>
-                    <li>Subscription records maintained for legal compliance</li>
-                </ul>
-
-                <h3>6.3 Data Management</h3>
-                <ul>
-                    <li>Currency context switching isolates data between currencies</li>
-                    <li>Currency deletion removes associated data</li>
-                    <li>Account deletion options available through settings</li>
-                </ul>
-
-                <h2>7. Offline Functionality</h2>
-
-                <h3>7.1 Offline Access</h3>
-                <ul>
-                    <li>The app functions primarily offline</li>
-                    <li>Firebase services may cache data for offline use</li>
-                    <li>Synchronization occurs when connection is reestablished</li>
-                </ul>
-
-                <h3>7.2 Data Synchronization</h3>
-                <ul>
-                    <li>Changes made offline are synced when online</li>
-                    <li>Conflict resolution follows last-write priority</li>
-                    <li>Critical operations may require online connectivity</li>
-                </ul>
-
-                <h2>8. Children's Privacy</h2>
-                <p>Our app is not intended for children under 13 years of age. We do not knowingly collect or maintain information from children under 13.</p>
-
-                <h2>9. Changes to Privacy Policy</h2>
-                <p>We may update this Privacy Policy periodically. Updates will be posted within the app with a notification of changes. Continued use after changes constitutes acceptance of the updated policy.</p>
-
-                <h2>10. Entertainment Purpose Disclaimer</h2>
-                <div class="highlight-box">
-                    <p><strong>CustomBank is a simulation app designed for entertainment purposes only. It does not provide real banking services or store actual financial information.</strong></p>
-                </div>
-
-                <h2>11. Contact Information</h2>
-                <p>For privacy-related questions:</p>
-                <ul>
-                    <li>Email: <a href="mailto:bobby@custombank.us">bobby@custombank.us</a></li>
-                    <li>Website: <a href="https://www.custombank.us/privacy">www.custombank.us/privacy</a></li>
-                </ul>
+                <h1 class="legal-hero-title">Privacy Policy</h1>
+                <p class="legal-hero-date">Last Updated: April 22, 2025</p>
             </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="legal-main">
+        <div class="legal-layout">
+            <!-- Table of Contents -->
+            <aside class="legal-toc">
+                <h2 class="legal-toc-title">Table of Contents</h2>
+                <ul class="legal-toc-list">
+                    <li><a href="#introduction">Introduction</a></li>
+                    <li><a href="#information">Information Collection</a></li>
+                    <li><a href="#storage">Data Storage & Security</a></li>
+                    <li><a href="#usage">How We Use Information</a></li>
+                    <li><a href="#sharing">Data Sharing</a></li>
+                    <li><a href="#rights">Your Rights</a></li>
+                    <li><a href="#offline">Offline Functionality</a></li>
+                    <li><a href="#children">Children's Privacy</a></li>
+                    <li><a href="#changes">Policy Changes</a></li>
+                    <li><a href="#disclaimer">Entertainment Disclaimer</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                </ul>
+            </aside>
+
+            <!-- Content -->
+            <main class="legal-content">
+                <section id="introduction">
+                    <h2>Introduction</h2>
+                    <p>Welcome to CustomBank. This Privacy Policy explains how we handle your information when using our banking simulation application. We are committed to protecting your privacy while providing an entertaining and realistic banking simulation experience with advanced features like our Currency Creator system.</p>
+                </section>
+
+                <section id="information">
+                    <h2>Information Collection and Use</h2>
+
+                    <h3>User-Provided Information</h3>
+                    <ul>
+                        <li>Account credentials (PINs and authentication settings)</li>
+                        <li>Customized account information and preferences</li>
+                        <li>Bank theme selection preferences</li>
+                        <li>Virtual card customizations</li>
+                        <li>Profile settings and preferences</li>
+                        <li>Currency Creator designs and configurations</li>
+                        <li>Currency membership and participation data</li>
+                        <li>Activity completion evidence (when submitted)</li>
+                    </ul>
+
+                    <h3>Automatically Collected Information</h3>
+                    <ul>
+                        <li>Device information (model, operating system version)</li>
+                        <li>App usage patterns and interaction statistics</li>
+                        <li>Performance metrics and crash reports</li>
+                        <li>Storage usage statistics</li>
+                        <li>Ad interaction data (for ad-based rewards)</li>
+                        <li>Subscription status (for premium features)</li>
+                    </ul>
+
+                    <h3>Information We DO NOT Collect</h3>
+                    <div class="highlight-box">
+                        <p><strong>We do not collect:</strong></p>
+                        <ul>
+                            <li>Real banking credentials</li>
+                            <li>Financial account information</li>
+                            <li>Credit card numbers (except as processed by your app store for subscriptions)</li>
+                            <li>Personal identification documents</li>
+                            <li>Social security numbers</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section id="storage">
+                    <h2>Data Storage and Security</h2>
+
+                    <h3>Local Storage</h3>
+                    <ul>
+                        <li>Primary data is stored using SharedPreferences on your device</li>
+                        <li>Currency data is managed through the CurrencyDataIsolationService</li>
+                        <li>Data persists until app uninstallation</li>
+                        <li>No external server communication for core app functionality</li>
+                    </ul>
+
+                    <h3>Firebase Integration</h3>
+                    <p>We use Firebase services for certain functionality, including:</p>
+                    <ul>
+                        <li>Authentication (if you choose to create an account)</li>
+                        <li>Cloud Firestore (for data that may sync across devices)</li>
+                        <li>Firebase Storage (for media like currency logos)</li>
+                        <li>Firebase Analytics (for app performance and usage statistics)</li>
+                        <li>Data shared with Firebase is subject to Google's Privacy Policy</li>
+                    </ul>
+
+                    <h3>Security Measures</h3>
+                    <ul>
+                        <li>Industry-standard encryption for local data</li>
+                        <li>Secure PIN protection</li>
+                        <li>Optional biometric authentication</li>
+                        <li>Firebase security rules for cloud data</li>
+                        <li>Automatic session timeouts</li>
+                        <li>Secure data erasure options</li>
+                    </ul>
+                </section>
+
+                <section id="usage">
+                    <h2>How We Use Your Information</h2>
+
+                    <h3>Core Functionality</h3>
+                    <ul>
+                        <li>Providing realistic banking simulation</li>
+                        <li>Maintaining custom account settings</li>
+                        <li>Preserving user preferences</li>
+                        <li>Managing virtual accounts and cards</li>
+                        <li>Simulating transactions</li>
+                        <li>Enabling Currency Creator functionality</li>
+                        <li>Supporting the Currency Experience system</li>
+                    </ul>
+
+                    <h3>Ad-Based Rewards</h3>
+                    <ul>
+                        <li>Delivering relevant advertisements</li>
+                        <li>Processing reward claims</li>
+                        <li>Tracking ad interaction for reward distribution</li>
+                        <li>Ad frequency and targeting optimization</li>
+                    </ul>
+
+                    <h3>App Improvement</h3>
+                    <ul>
+                        <li>Analyzing app performance</li>
+                        <li>Identifying potential bugs</li>
+                        <li>Optimizing user experience</li>
+                        <li>Developing new features</li>
+                        <li>Enhancing Currency Creator functionality</li>
+                    </ul>
+                </section>
+
+                <section id="sharing">
+                    <h2>Data Sharing and Disclosure</h2>
+
+                    <h3>Third-Party Services</h3>
+                    <ul>
+                        <li>Google Firebase (for services mentioned above)</li>
+                        <li>Google Mobile Ads (for ad-based rewards)</li>
+                        <li>Unity Ads (as alternative ad provider)</li>
+                        <li>RevenueCat (for subscription management)</li>
+                        <li>Your app store provider (for premium subscription processing)</li>
+                    </ul>
+
+                    <h3>Currency System Sharing</h3>
+                    <ul>
+                        <li>Currency creators can see membership information</li>
+                        <li>Currency members can see leaderboard data</li>
+                        <li>Activity submissions may be visible to currency administrators</li>
+                        <li>Currency invitations share limited information with recipients</li>
+                    </ul>
+
+                    <h3>Legal Requirements</h3>
+                    <p>We may disclose information if required by law, regulation, or legal process.</p>
+                </section>
+
+                <section id="rights">
+                    <h2>User Rights and Controls</h2>
+
+                    <h3>Your Rights</h3>
+                    <ul>
+                        <li>Access your locally stored data</li>
+                        <li>Modify account and currency settings</li>
+                        <li>Delete specific currencies or activities</li>
+                        <li>Control app permissions</li>
+                        <li>Opt out of analytics collection (via settings)</li>
+                        <li>Manage ad consent preferences</li>
+                    </ul>
+
+                    <h3>Data Retention</h3>
+                    <ul>
+                        <li>Local data retained until app uninstallation</li>
+                        <li>Firebase data retained according to our data retention policies</li>
+                        <li>Currency data may persist after leaving a currency (for record-keeping)</li>
+                        <li>Subscription records maintained for legal compliance</li>
+                    </ul>
+
+                    <h3>Data Management</h3>
+                    <ul>
+                        <li>Currency context switching isolates data between currencies</li>
+                        <li>Currency deletion removes associated data</li>
+                        <li>Account deletion options available through settings</li>
+                    </ul>
+                </section>
+
+                <section id="offline">
+                    <h2>Offline Functionality</h2>
+
+                    <h3>Offline Access</h3>
+                    <ul>
+                        <li>The app functions primarily offline</li>
+                        <li>Firebase services may cache data for offline use</li>
+                        <li>Synchronization occurs when connection is reestablished</li>
+                    </ul>
+
+                    <h3>Data Synchronization</h3>
+                    <ul>
+                        <li>Changes made offline are synced when online</li>
+                        <li>Conflict resolution follows last-write priority</li>
+                        <li>Critical operations may require online connectivity</li>
+                    </ul>
+                </section>
+
+                <section id="children">
+                    <h2>Children's Privacy</h2>
+                    <p>Our app is not intended for children under 13 years of age. We do not knowingly collect or maintain information from children under 13.</p>
+                </section>
+
+                <section id="changes">
+                    <h2>Changes to Privacy Policy</h2>
+                    <p>We may update this Privacy Policy periodically. Updates will be posted within the app with a notification of changes. Continued use after changes constitutes acceptance of the updated policy.</p>
+                </section>
+
+                <section id="disclaimer">
+                    <h2>Entertainment Purpose Disclaimer</h2>
+                    <div class="highlight-box">
+                        <p><strong>CustomBank is a simulation app designed for entertainment purposes only. It does not provide real banking services or store actual financial information.</strong></p>
+                    </div>
+                </section>
+
+                <section id="contact">
+                    <h2>Contact Information</h2>
+                    <p>For privacy-related questions:</p>
+                    <ul>
+                        <li>Email: <a href="mailto:bobby@custombank.us">bobby@custombank.us</a></li>
+                        <li>Website: <a href="https://www.custombank.us/privacy">www.custombank.us/privacy</a></li>
+                    </ul>
+                </section>
+            </main>
         </div>
     </div>
 
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <div class="footer-bottom" style="text-align: center; padding: 2rem 0;">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <div class="footer-logo">
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="32" height="32" rx="8" fill="#3B82F6"/>
+                            <path d="M16 8L22 12V20L16 24L10 20V12L16 8Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M16 16L12 14V18L16 20L20 18V14L16 16Z" fill="white"/>
+                        </svg>
+                        <span>CustomBank</span>
+                    </div>
+                    <p class="footer-tagline">Your Banking Simulator</p>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/custombankapp/" aria-label="Follow us on Instagram" target="_blank" rel="noopener noreferrer">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                                <circle cx="12" cy="12" r="4"/>
+                                <circle cx="17.5" cy="6.5" r="1.5" fill="currentColor"/>
+                            </svg>
+                        </a>
+                        <a href="https://www.tiktok.com/@custombankapp" aria-label="Follow us on TikTok" target="_blank" rel="noopener noreferrer">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
+                            </svg>
+                        </a>
+                        <a href="https://apps.apple.com/us/app/custombank/id6738460636" aria-label="Download on App Store" target="_blank" rel="noopener noreferrer">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M18.71 19.5C17.88 20.74 17 21.95 15.66 21.97C14.32 22 13.89 21.18 12.37 21.18C10.84 21.18 10.37 21.95 9.1 22C7.79 22.05 6.8 20.68 5.96 19.47C4.25 17 2.94 12.45 4.7 9.39C5.57 7.87 7.13 6.91 8.82 6.88C10.1 6.86 11.32 7.75 12.11 7.75C12.89 7.75 14.37 6.68 15.92 6.84C16.57 6.87 18.39 7.1 19.56 8.82C19.47 8.88 17.39 10.1 17.41 12.63C17.44 15.65 20.06 16.66 20.09 16.67C20.06 16.74 19.67 18.11 18.71 19.5ZM13 3.5C13.73 2.67 14.94 2.04 15.94 2C16.07 3.17 15.6 4.35 14.9 5.19C14.21 6.04 13.07 6.7 11.95 6.61C11.8 5.46 12.36 4.26 13 3.5Z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Product</h4>
+                    <ul>
+                        <li><a href="index.html#features">Features</a></li>
+                        <li><a href="index.html#pricing">Pricing</a></li>
+                        <li><a href="https://apps.apple.com/us/app/custombank/id6738460636" target="_blank" rel="noopener noreferrer">Download iOS</a></li>
+                        <li><a href="https://play.google.com/store/apps/details?id=com.custombankapp.app" target="_blank" rel="noopener noreferrer">Download Android</a></li>
+                        <li><a href="#">Roadmap</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#">Documentation</a></li>
+                        <li><a href="mailto:bobby@custombank.us">Support</a></li>
+                        <li><a href="index.html#faq">FAQs</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="mailto:bobby@custombank.us">Contact</a></li>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                        <li><a href="#">Status Page</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
                 <p class="copyright">© 2025 CustomBank. All rights reserved.</p>
                 <p class="disclaimer">Banking simulation for educational purposes only. No real money involved.</p>
-                <div style="margin-top: 1rem;">
-                    <a href="privacy.html" style="color: var(--gray-400); margin: 0 1rem;">Privacy Policy</a>
-                    <a href="terms.html" style="color: var(--gray-400); margin: 0 1rem;">Terms of Service</a>
-                    <a href="index.html" style="color: var(--gray-400); margin: 0 1rem;">Home</a>
-                </div>
             </div>
         </div>
     </footer>
+
+    <script>
+        // Scroll progress bar
+        window.addEventListener('scroll', () => {
+            const winScroll = document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById('legalProgress').style.width = scrolled + '%';
+        });
+
+        // TOC active link highlighting
+        const sections = document.querySelectorAll('.legal-content section');
+        const navLinks = document.querySelectorAll('.legal-toc-list a');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= (sectionTop - 150)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
