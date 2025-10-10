@@ -317,3 +317,129 @@ Mobile: Enhanced UX with sticky CTA and better menu
 **Date Completed**: October 10, 2025
 **Time Invested**: ~4 hours
 **Impact**: High - Beautiful, modern, mobile-optimized site
+
+---
+
+## 🌐 Deployment & DNS Configuration
+
+### Deployment History
+
+**Commits:**
+- `5f7d515` - Phase 1: Visual polish, mobile improvements & carousel removal
+- `0f7532f` - Cache bust: Update CSS version to phase1
+- `a856f4a` - Force Vercel redeploy - trigger new build
+
+**Repository:** https://github.com/bobbyburns1989/CustomBankWebSite
+**Branch:** main
+
+### DNS Configuration (GoDaddy)
+
+**Current Setup:**
+- Registrar: GoDaddy
+- Domain: custombank.us
+- Nameservers: ns33.domaincontrol.com, ns34.domaincontrol.com
+
+**Required DNS Records:**
+
+| Type | Name | Value | TTL | Status |
+|------|------|-------|-----|--------|
+| A | @ | **76.76.21.21** | 1 Hour | ⚠️ Needs Update |
+| CNAME | www | d26885344447b750ea.vercel-dns-017.com | 1 Hour | ✅ Correct |
+| NS | @ | ns33.domaincontrol.com | 1 Hour | ✅ Correct |
+| NS | @ | ns34.domaincontrol.com | 1 Hour | ✅ Correct |
+
+**Current Issue (Oct 10, 2025):**
+- Apex domain (@) currently pointing to `216.198.79.193` (incorrect)
+- Should point to `76.76.21.21` (Vercel's IP)
+- WWW subdomain correctly configured
+
+**Fix Required:**
+1. Go to GoDaddy DNS Management: https://dcc.godaddy.com/control/portfolio/custombank.us/settings
+2. Edit the A record (Type: A, Name: @)
+3. Change IP from `216.198.79.193` to `76.76.21.21`
+4. Save changes
+5. Wait 5-10 minutes for DNS propagation
+
+### Vercel Configuration
+
+**Project Details:**
+- Platform: Vercel
+- Auto-deploy: Enabled (GitHub integration)
+- Build Command: None (static site)
+- Output Directory: `.` (root)
+- Framework: None (vanilla HTML/CSS/JS)
+
+**Deployment URLs:**
+- Primary: https://custombank.us (custom domain)
+- WWW: https://www.custombank.us (custom domain)
+- Vercel Preview: https://custom-bank-web-site.vercel.app
+
+**Build Settings (vercel.json):**
+```json
+{
+  "version": 2,
+  "buildCommand": null,
+  "devCommand": null,
+  "installCommand": null,
+  "framework": null,
+  "outputDirectory": "."
+}
+```
+
+### Deployment Troubleshooting
+
+**Common Issues:**
+
+1. **Changes Not Visible**
+   - **Cause:** Browser/CDN cache
+   - **Fix:** Hard refresh (Cmd+Shift+R or Ctrl+Shift+R)
+   - **Alternative:** Clear browser cache or use incognito mode
+
+2. **Deployment Not Triggering**
+   - **Cause:** Vercel not connected to GitHub or build failed
+   - **Check:** https://vercel.com/dashboard
+   - **Fix:** Verify GitHub integration in Vercel settings
+
+3. **DNS Not Resolving**
+   - **Cause:** Incorrect DNS records
+   - **Check:** `dig custombank.us +short` (should return 76.76.21.21)
+   - **Fix:** Update A record to correct Vercel IP
+
+4. **Old Version Served**
+   - **Cause:** CDN cache or deployment didn't complete
+   - **Check:** View page source for CSS version parameter
+   - **Fix:** Force new deployment by pushing any change to GitHub
+
+**Cache Busting Strategy:**
+- CSS versioning: `styles.css?v=20251010-phase1`
+- Updated on each major deployment
+- Forces browsers to fetch new CSS file
+
+**Verification Commands:**
+```bash
+# Check DNS A record
+dig custombank.us +short
+
+# Check DNS CNAME record
+dig www.custombank.us +short
+
+# Test HTTP response
+curl -I https://custombank.us
+
+# Check deployed version
+curl -s https://custombank.us | grep 'styles.css'
+```
+
+### Post-Deployment Checklist
+
+- [ ] DNS A record updated to 76.76.21.21
+- [ ] DNS propagation verified (dig command)
+- [ ] Hard refresh performed on all browsers
+- [ ] Terms link visible in navigation
+- [ ] Gradient buttons with shadows visible
+- [ ] Scroll progress bar appears below navbar
+- [ ] Mobile sticky CTA works (test on mobile)
+- [ ] All animations functioning
+- [ ] No console errors (check browser DevTools)
+
+---
