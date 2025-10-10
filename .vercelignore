@@ -1,0 +1,14 @@
+# Vercel ignore file
+# Keep deployment clean - only ignore development files
+
+.git
+.github
+.DS_Store
+*.md
+!README.md
+SESSION-SUMMARY-*.md
+TROUBLESHOOTING.md
+DEPLOYMENT.md
+IMPROVEMENT_PLAN.md
+REFACTORING-SUMMARY.md
+.claude
