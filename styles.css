@@ -576,6 +576,32 @@ p {
     font-size: 1.0625rem;
 }
 
+.feature-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.feature-list li {
+    color: var(--gray-600);
+    font-size: 1.0625rem;
+    line-height: 1.6;
+    padding-left: 1.75rem;
+    position: relative;
+}
+
+.feature-list li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-weight: var(--font-weight-bold);
+    font-size: 1rem;
+}
+
 /* Pricing Cards */
 .pricing-card {
     background: var(--white);
@@ -1989,6 +2015,19 @@ button:focus {
     .feature-card p {
         font-size: 0.9375rem;
         line-height: 1.6;
+    }
+
+    .feature-list {
+        gap: 0.625rem;
+    }
+
+    .feature-list li {
+        font-size: 0.9375rem;
+        padding-left: 1.5rem;
+    }
+
+    .feature-list li::before {
+        font-size: 0.875rem;
     }
 
     /* Store badges - smaller for small phones */
