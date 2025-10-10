@@ -306,9 +306,12 @@ p {
 }
 
 .store-badge img {
-    height: 56px;
-    width: auto;
+    height: 56px !important;
+    width: 168px !important;
     display: block;
+    object-fit: contain;
+    max-height: 56px;
+    max-width: 168px;
 }
 
 .store-badge:hover {
@@ -1848,7 +1851,8 @@ button:focus {
 
     /* Store badges - slightly smaller on mobile */
     .store-badge img {
-        height: 48px;
+        height: 48px !important;
+        width: 144px !important;
     }
 
     .faq-grid {
@@ -2032,7 +2036,8 @@ button:focus {
 
     /* Store badges - smaller for small phones */
     .store-badge img {
-        height: 44px;
+        height: 44px !important;
+        width: 132px !important;
     }
 
     /* Pricing cards - more compact */
