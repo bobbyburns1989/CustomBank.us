@@ -9,28 +9,73 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed - 2025-10-10
 
-#### Button Size Consistency Fix
-**Problem:** App Store and Google Play download buttons displayed at different sizes despite both having `height="56"` attributes in HTML. This was caused by different aspect ratios between the badge images:
+#### Button Size Consistency Fix (AGGRESSIVE FIX - FINAL)
+**Problem:** App Store and Google Play download buttons displayed at different sizes despite both having `height="56"` attributes in HTML. This was caused by multiple conflicting factors:
 - App Store badge (SVG): 120×40 pixels (3:1 ratio)
 - Google Play badge (PNG): 646×250 pixels (2.58:1 ratio)
+- Inline HTML `height="56"` attributes conflicting with CSS
+- Global `img {height: auto}` rule interfering with button sizing
+- CSS specificity issues preventing consistent rendering
 
-**Solution:**
-- Implemented forced equal dimensions using `!important` CSS flags
-- Set fixed width (168px) to match the 3:1 aspect ratio
-- Added `object-fit: contain` to prevent image distortion
-- Applied responsive sizing across all breakpoints:
-  - **Desktop:** 168px × 56px
-  - **Mobile (≤768px):** 144px × 48px
-  - **Small Mobile (≤480px):** 132px × 44px
+**Solution Evolution:**
+
+**Attempt 1 (Commit `a6f2f16`):**
+- Added `!important` flags to CSS
+- Set fixed width (168px) to match 3:1 aspect ratio
+- Added `object-fit: contain` to prevent distortion
+- **Result:** Partial success, but inline attributes still caused issues
+
+**Attempt 2 - AGGRESSIVE FIX (Commit `b9eb2e6`):**
+1. **Removed ALL inline `height="56"` attributes** from HTML (6 buttons total)
+   - Eliminated inline attribute conflicts
+   - Gave CSS complete control over sizing
+2. **Added fixed-size parent containers:**
+   ```css
+   .store-badge {
+     width: 168px;
+     height: 56px;
+   }
+   ```
+3. **Applied aggressive multi-constraint CSS:**
+   ```css
+   .store-badge img {
+     height: 56px !important;
+     width: 168px !important;
+     min-height: 56px;
+     min-width: 168px;
+     max-height: 56px;
+     max-width: 168px;
+     object-fit: contain;
+     display: block !important;
+   }
+   ```
+4. **Applied across all responsive breakpoints:**
+   - **Desktop:** 168px × 56px
+   - **Mobile (≤768px):** 144px × 48px
+   - **Small Mobile (≤480px):** 132px × 44px
+
+**Technical Details:**
+- Parent container acts as fixed-size box constraining child images
+- Multiple min/max constraints prevent any size escape
+- `!important` flags override all competing CSS rules
+- `object-fit: contain` prevents image distortion
+- Images must fit into exact dimensions at all breakpoints
 
 **Files Modified:**
-- `styles.css` (lines 308-315, 1853-1856, 2038-2041)
+- `index.html` (removed inline height from 4 buttons: lines 111, 114, 1044, 1047)
+- `use-cases.html` (removed inline height from 2 buttons: lines 259, 262)
+- `styles.css` (added container sizing + aggressive constraints: lines 302-319, 1857-1869, 2051-2063)
 
-**Affected Pages:**
-- `index.html` (hero section & bottom CTA section)
-- `use-cases.html` (hero section)
+**Affected Locations:**
+- `index.html` - Hero section (top of homepage)
+- `index.html` - Bottom CTA section (blue gradient)
+- `use-cases.html` - Hero section
 
-**Commit:** `a6f2f16` - Fix App Store/Google Play button size inconsistency
+**Result:** Both buttons now render at EXACTLY the same dimensions across all screen sizes and locations.
+
+**Commits:**
+- `a6f2f16` - Initial fix attempt (CSS only)
+- `b9eb2e6` - AGGRESSIVE FIX (removed HTML attributes + enhanced CSS)
 
 ---
 
