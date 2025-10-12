@@ -69,17 +69,9 @@
     --z-tooltip: 3000;
 }
 
-/* Scroll Progress Bar */
+/* Scroll Progress Bar - Hidden to prevent overlap with logo */
 .scroll-progress {
-    position: fixed;
-    top: 80px;
-    left: 0;
-    width: 0%;
-    height: 3px;
-    background: var(--gradient-accent);
-    z-index: 1001;
-    transition: width 0.1s ease;
-    box-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
+    display: none;
 }
 /* ===================================
    CSS Reset & Base Styles
@@ -448,6 +440,12 @@ p {
     font-weight: var(--font-weight-bold);
     color: var(--white);
     margin-bottom: 1rem;
+}
+
+.footer-logo .logo-image {
+    filter: brightness(0) invert(1);
+    height: 32px;
+    width: auto;
 }
 
 .footer-tagline {
