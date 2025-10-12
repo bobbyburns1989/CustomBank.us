@@ -305,17 +305,18 @@ p {
     line-height: 0;
     width: 168px;
     height: 56px;
+    background: #000000;
+    border-radius: 8px;
+    padding: 4px;
+    box-sizing: border-box;
 }
 
 .store-badge img {
-    height: 56px !important;
-    width: 168px !important;
-    min-height: 56px;
-    min-width: 168px;
-    max-height: 56px;
-    max-width: 168px;
+    height: 100% !important;
+    width: 100% !important;
     object-fit: contain;
     display: block !important;
+    border-radius: 6px;
 }
 
 .store-badge:hover {
@@ -362,6 +363,17 @@ p {
     font-size: 1.25rem;
     font-weight: var(--font-weight-bold);
     color: var(--dark);
+}
+
+.logo-image {
+    height: 32px;
+    width: auto;
+    display: block;
+    transition: all 0.3s ease;
+}
+
+.logo:hover .logo-image {
+    opacity: 0.8;
 }
 
 .logo-text {
@@ -1886,15 +1898,7 @@ button:focus {
     .store-badge {
         width: 144px;
         height: 48px;
-    }
-
-    .store-badge img {
-        height: 48px !important;
-        width: 144px !important;
-        min-height: 48px;
-        min-width: 144px;
-        max-height: 48px;
-        max-width: 144px;
+        padding: 4px;
     }
 
     .faq-grid {
@@ -1945,17 +1949,9 @@ button:focus {
     .cta-buttons .store-badge {
         width: 156px;
         height: 52px;
+        padding: 4px;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
         transition: all 0.3s ease;
-    }
-
-    .cta-buttons .store-badge img {
-        height: 52px !important;
-        width: 156px !important;
-        min-height: 52px;
-        min-width: 156px;
-        max-height: 52px;
-        max-width: 156px;
     }
 
     .cta-buttons .store-badge:active {
@@ -2129,15 +2125,7 @@ button:focus {
     .store-badge {
         width: 132px;
         height: 44px;
-    }
-
-    .store-badge img {
-        height: 44px !important;
-        width: 132px !important;
-        min-height: 44px;
-        min-width: 132px;
-        max-height: 44px;
-        max-width: 132px;
+        padding: 4px;
     }
 
     /* Pricing cards - more compact */
@@ -2209,15 +2197,7 @@ button:focus {
     .cta-buttons .store-badge {
         width: 144px;
         height: 48px;
-    }
-
-    .cta-buttons .store-badge img {
-        height: 48px !important;
-        width: 144px !important;
-        min-height: 48px;
-        min-width: 144px;
-        max-height: 48px;
-        max-width: 144px;
+        padding: 4px;
     }
 
     .trial-badge {
