@@ -58,10 +58,10 @@
     /* Typography */
     --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     --font-weight-normal: 400;
-    --font-weight-medium: 500;
+    --font-weight-medium: 600;
     --font-weight-semibold: 600;
     --font-weight-bold: 700;
-    --font-weight-extrabold: 800;
+    --font-weight-extrabold: 700;
 
     /* Z-index layers */
     --z-navbar: 1000;
@@ -833,7 +833,8 @@ p {
 }
 
 .faq-item.active .faq-answer {
-    max-height: 500px;
+    max-height: 1000px; /* Increased from 500px to accommodate longer answers */
+    overflow: visible; /* Ensure content is never cut off */
 }
 
 .faq-answer p {
