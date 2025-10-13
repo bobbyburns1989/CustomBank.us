@@ -1856,7 +1856,7 @@ button:focus {
 
     .hero {
         min-height: auto;
-        padding-top: 100px;
+        padding-top: 180px;  /* Increased for iPhone 15 - ensures title clears navbar */
         padding-bottom: 60px;
     }
 
@@ -1868,6 +1868,7 @@ button:focus {
         font-size: 2rem;
         margin-bottom: 1.25rem;
         line-height: 1.15;
+        margin-top: 0.5rem;  /* Extra spacing to ensure visibility */
     }
 
     .hero-subtitle {
