@@ -357,11 +357,41 @@ p {
     color: var(--dark);
 }
 
+/* Logo Responsive Sizing - Cross-Device Consistency */
 .logo-image {
-    height: 32px;
-    width: auto;
+    max-width: 140px;  /* Default/Desktop size */
+    width: 100%;
+    height: auto;
     display: block;
     transition: all 0.3s ease;
+}
+
+/* Tablet and smaller (768px and below) */
+@media (max-width: 768px) {
+    .logo-image {
+        max-width: 120px;  /* Slightly smaller on tablets */
+    }
+}
+
+/* Mobile phones (480px and below) */
+@media (max-width: 480px) {
+    .logo-image {
+        max-width: 100px;  /* Compact on phones */
+    }
+}
+
+/* Small phones - iPhone SE, etc. (375px and below) */
+@media (max-width: 375px) {
+    .logo-image {
+        max-width: 90px;  /* Very compact on small screens */
+    }
+}
+
+/* Extra small screens (320px) */
+@media (max-width: 320px) {
+    .logo-image {
+        max-width: 80px;  /* Minimum size */
+    }
 }
 
 .logo:hover .logo-image {
