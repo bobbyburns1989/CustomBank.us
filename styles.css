@@ -1341,9 +1341,12 @@ p {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 3rem;
+    gap: 2rem;
     flex-wrap: wrap;
     margin-bottom: 1.5rem;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .badge-item {
@@ -2000,6 +2003,10 @@ button:focus {
 
     .badges-row {
         gap: 1.5rem;
+        /* Display as 2 rows of 4 badges on mobile */
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 100%;
     }
 
     .testimonials-grid {
@@ -2248,6 +2255,15 @@ button:focus {
         flex-direction: column;
         text-align: center;
         gap: 0.5rem;
+        padding: 0.75rem;
+    }
+
+    .badge-text strong {
+        font-size: 0.8125rem;
+    }
+
+    .badge-text span {
+        font-size: 0.6875rem;
     }
 
     /* Trust indicators - smaller text */
