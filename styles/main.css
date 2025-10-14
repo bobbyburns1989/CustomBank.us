@@ -1,0 +1,24 @@
+/* ===================================
+   CustomBank Website - Main CSS
+   Modular CSS Architecture
+   ================================== */
+
+/* Import all CSS modules in order */
+@import url('01-variables.css');
+@import url('02-base.css');
+@import url('03-components.css');
+@import url('04-sections.css');
+@import url('05-animations.css');
+@import url('07-utilities.css');
+@import url('06-responsive.css');
+
+/*
+ * File Structure:
+ * 01-variables.css - CSS custom properties
+ * 02-base.css - Reset, typography, base styles
+ * 03-components.css - Reusable UI components (buttons, cards, badges)
+ * 04-sections.css - Page sections (hero, features, pricing, etc.)
+ * 05-animations.css - Keyframe animations
+ * 07-utilities.css - Helper classes, accessibility
+ * 06-responsive.css - Media queries (loaded last)
+ */
