@@ -222,6 +222,21 @@
     background: var(--gray-800);
     transition: all var(--transition-base);
 }
+
+/* Navigation Download Section - Hidden on desktop, shown on mobile */
+.nav-download-section {
+    display: none;  /* Hidden by default on desktop to avoid duplication */
+}
+
+.nav-store-badge {
+    display: inline-block;
+    transition: all var(--transition-base);
+}
+
+.nav-store-badge img {
+    display: block;
+    height: auto;
+}
 /* ===================================
    Footer Styles
    ================================== */

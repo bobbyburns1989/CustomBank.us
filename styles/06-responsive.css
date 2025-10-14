@@ -113,6 +113,21 @@
         font-size: 1.1rem;
     }
 
+    /* Show download badges in mobile menu */
+    .nav-download-section {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        width: 100%;
+        margin-top: 0.5rem;
+    }
+
+    .nav-store-badge {
+        width: 100%;
+        max-width: 200px;
+        margin: 0 auto;
+    }
+
     .mobile-menu-toggle {
         display: flex;
     }
@@ -130,24 +145,27 @@
     }
 
     .hero {
-        min-height: auto;
-        padding-top: calc(60px + 20vh);  /* Reduced from calc(100px + 20vh) to match smaller navbar */
-        padding-bottom: 60px;
+        min-height: 100vh;
+        padding-top: 100px;  /* Fixed spacing - was calc(60px + 20vh) which created 229px on iPhone 15 */
+        padding-bottom: 2rem;
+        display: flex;
+        align-items: flex-start;
     }
 
     .hero .container {
-        gap: 2.5rem;
+        gap: 2rem;
     }
 
     .hero-title {
-        font-size: 2rem;
-        margin-bottom: 1.25rem;
+        font-size: 2.25rem;  /* Increased from 2rem for better mobile presence */
+        margin-bottom: 1rem;
         line-height: 1.15;
+        font-weight: 800;
     }
 
     .hero-subtitle {
         font-size: 1.125rem;
-        margin-bottom: 2rem;
+        margin-bottom: 1.5rem;  /* Reduced from 2rem to tighten spacing */
         line-height: 1.5;
     }
 
@@ -171,8 +189,8 @@
     .trust-indicators {
         flex-wrap: wrap;
         gap: 0.5rem 0.75rem;
-        font-size: 0.8125rem;
-        margin-bottom: 1.25rem;
+        font-size: 0.875rem;  /* Slightly increased from 0.8125rem for better readability */
+        margin-bottom: 1.5rem;  /* Increased from 1.25rem for better spacing before CTAs */
     }
 
     .separator {
@@ -180,11 +198,15 @@
         opacity: 0.5;
     }
 
-    /* Hero phone mockup - reduce size on mobile */
+    /* Hero phone mockup - optimized size and spacing for mobile */
     .phone-mockup {
-        width: 220px;
-        height: 440px;
-        margin: 2rem auto 0;
+        width: 200px;
+        height: 400px;
+        margin: 1rem auto 0;  /* Reduced top margin from 2rem to 1rem */
+    }
+
+    .hero-image {
+        margin-top: 0;  /* Remove any extra margin */
     }
 
     .features-grid {
@@ -370,19 +392,24 @@
     }
 
     /* Hero section - compact for small screens */
+    .hero {
+        padding-top: 90px;  /* Slightly less padding on very small screens */
+    }
+
     .hero-title {
         font-size: 2rem;
         margin-bottom: 1rem;
     }
 
     .hero-subtitle {
-        font-size: 1.125rem;
-        margin-bottom: 2rem;
+        font-size: 1.0625rem;  /* Slightly smaller on very small screens */
+        margin-bottom: 1.5rem;  /* Tighter spacing */
     }
 
     .phone-mockup {
-        width: 220px;
-        height: 440px;
+        width: 180px;  /* Smaller on tiny screens */
+        height: 360px;
+        margin: 0.75rem auto 0;  /* Tighter top margin */
     }
 
     /* Feature cards - more compact */
