@@ -7,6 +7,42 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed - 2025-10-14
+
+#### Mobile Navigation Menu Cleanup & Verification
+**Problem:** Mobile hamburger menu contained outdated "Pricing" link after pricing section was removed from the website in commit `56b125f`.
+
+**Solution:**
+1. **Verified Pricing Link Removal**
+   - Confirmed "Pricing" link completely removed from mobile menu (lines 348-447)
+   - Grep search confirmed no "Pricing" references in index.html
+   - Mobile menu now shows: Features, Use Cases, FAQ, Privacy, Terms
+
+2. **Verified Social Media Links**
+   - Instagram and TikTok links confirmed present (lines 421-436)
+   - Both links include SVG icons and proper labels
+   - Target blank and rel attributes for security
+
+3. **Visual Hierarchy Confirmed**
+   - Navigation properly organized with dividers
+   - Grouped into logical sections:
+     - Product: Features, Use Cases
+     - Support: FAQ
+     - Legal: Privacy, Terms
+     - Download: App Store + Google Play badges
+     - Social: Instagram + TikTok
+
+**Status:** All mobile menu improvements from October 13 redesign verified and confirmed live.
+
+**Files Verified:**
+- `index.html` (lines 348-447)
+
+**Commits:**
+- `7acf30f` - Remove redundant 'No Real Money' indicator and fix mobile menu
+- `56b125f` - Remove pricing section for cleaner conversion flow
+
+---
+
 ### Fixed - 2025-10-10
 
 #### Button Size Consistency Fix (AGGRESSIVE FIX - FINAL)
@@ -196,4 +232,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
-*Last Updated: October 10, 2025*
+*Last Updated: October 14, 2025*

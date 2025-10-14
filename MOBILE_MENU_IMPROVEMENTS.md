@@ -1,7 +1,7 @@
 # Mobile Hamburger Menu Improvements
 
-**Date**: October 13, 2025
-**Version**: 2.0
+**Date**: October 14, 2025
+**Version**: 2.1
 **Author**: Claude Code
 
 ---
@@ -9,6 +9,8 @@
 ## Overview
 
 Complete redesign of the mobile hamburger menu with icons, visual grouping, app store badges, and social media links for a more professional and user-friendly experience.
+
+**Note**: The Pricing section and link were removed from the website in October 2025 (commit `56b125f`) to create a cleaner conversion flow. This documentation reflects the current state without pricing.
 
 ---
 
@@ -18,14 +20,13 @@ Complete redesign of the mobile hamburger menu with icons, visual grouping, app 
 
 1. **Added Icons to All Menu Items**
    - Features: Grid icon (represents multiple features)
-   - Pricing: Credit card icon
    - Use Cases: Lightbulb icon (ideas/use cases)
    - FAQ: Question mark icon
    - Privacy: Shield icon (security/privacy)
    - Terms: Document icon
 
 2. **Visual Grouping with Dividers**
-   - **Group 1: Product** - Features, Pricing, Use Cases
+   - **Group 1: Product** - Features, Use Cases
    - **Group 2: Support** - FAQ
    - **Group 3: Legal** - Privacy, Terms
    - **Group 4: Download** - App Store & Google Play badges
@@ -55,7 +56,6 @@ Complete redesign of the mobile hamburger menu with icons, visual grouping, app 
 ```html
 <div class="nav-links">
     <a href="#features">Features</a>
-    <a href="#pricing">Pricing</a>
     <a href="use-cases.html">Use Cases</a>
     <a href="#faq">FAQ</a>
     <a href="privacy.html">Privacy</a>
@@ -205,7 +205,6 @@ All icons are custom SVG designs:
 | Item | Icon Type | SVG Viewbox | Color |
 |------|-----------|-------------|-------|
 | Features | Grid (4 squares) | 24x24 | Accent Blue |
-| Pricing | Credit Card | 24x24 | Accent Blue |
 | Use Cases | Lightbulb | 24x24 | Accent Blue |
 | FAQ | Question Circle | 24x24 | Accent Blue |
 | Privacy | Shield | 24x24 | Accent Blue |
@@ -222,7 +221,7 @@ All icons are custom SVG designs:
 | Aspect | Before | After |
 |--------|--------|-------|
 | Visual Hierarchy | ❌ All items same style | ✅ Grouped sections with dividers |
-| Icons | ❌ None | ✅ All 6 nav items + 2 social |
+| Icons | ❌ None | ✅ All 5 nav items + 2 social |
 | Download CTA | ❌ Generic button | ✅ App Store + Google Play badges |
 | Social Links | ❌ None | ✅ Instagram + TikTok |
 | Hover States | ❌ Basic | ✅ Background + icon scale animation |
@@ -351,5 +350,5 @@ For questions or issues:
 
 ---
 
-**Last Updated**: October 13, 2025
-**Version**: 2.0
+**Last Updated**: October 14, 2025
+**Version**: 2.1
