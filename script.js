@@ -3,7 +3,7 @@
 // Helper functions, performance tracking, accessibility
 // ===================================
 
-export function initUtils() {
+function initUtils() {
     // Detect if user prefers reduced motion
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -81,7 +81,7 @@ export function initUtils() {
 }
 
 // Cleanup on Page Unload
-export function cleanup() {
+function cleanup() {
     // Clear all intervals to prevent memory leaks
     if (window.premiumButtonInterval) {
         clearInterval(window.premiumButtonInterval);
@@ -92,7 +92,7 @@ export function cleanup() {
 // Handles mobile menu, smooth scroll, navbar effects
 // ===================================
 
-export function initNavigation() {
+function initNavigation() {
     // Mobile Menu Toggle
     const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
     const navLinks = document.querySelector('.nav-links');
@@ -197,7 +197,7 @@ function createMobileStickyCTA() {
 // Handles scroll animations, intersection observers, counters
 // ===================================
 
-export function initAnimations() {
+function initAnimations() {
     // Animated Statistics Counter
     const animateCounter = (element, target, duration = 2000) => {
         const start = 0;
@@ -328,7 +328,7 @@ export function initAnimations() {
 // Handles FAQ accordion and other interactive elements
 // ===================================
 
-export function initInteractions() {
+function initInteractions() {
     // FAQ Accordion
     const faqItems = document.querySelectorAll('.faq-item');
 
@@ -362,7 +362,7 @@ export function initInteractions() {
 // Handles download tracking and analytics events
 // ===================================
 
-export function initAnalytics() {
+function initAnalytics() {
     // Track Download Button Clicks
     const downloadButtons = document.querySelectorAll('a[href*="apple.com"], a[href*="play.google.com"]');
 
@@ -384,15 +384,7 @@ export function initAnalytics() {
 }
 // ===================================
 // CustomBank Website - Main JavaScript Entry Point
-// ES6 Modules Architecture
 // ===================================
-
-// Import all modules
-import { initNavigation } from './modules/navigation.js';
-import { initAnimations } from './modules/animations.js';
-import { initInteractions } from './modules/interactions.js';
-import { initAnalytics } from './modules/analytics.js';
-import { initUtils, cleanup } from './modules/utils.js';
 
 // Initialize all modules when DOM is ready
 document.addEventListener('DOMContentLoaded', () => {
@@ -412,13 +404,3 @@ document.addEventListener('DOMContentLoaded', () => {
 window.addEventListener('beforeunload', () => {
     cleanup();
 });
-
-/*
- * Module Structure:
- *
- * modules/navigation.js - Mobile menu, smooth scroll, navbar effects
- * modules/animations.js - Intersection observers, scroll animations, counters
- * modules/interactions.js - FAQ accordion, interactive elements
- * modules/analytics.js - Download tracking, analytics events
- * modules/utils.js - Helper functions, performance, accessibility, easter eggs
- */
