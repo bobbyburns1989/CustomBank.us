@@ -83,9 +83,6 @@ function initUtils() {
 // Cleanup on Page Unload
 function cleanup() {
     // Clear all intervals to prevent memory leaks
-    if (window.premiumButtonInterval) {
-        clearInterval(window.premiumButtonInterval);
-    }
 }
 // ===================================
 // Navigation Module
@@ -259,15 +256,6 @@ function initAnimations() {
         fadeInObserver.observe(card);
     });
 
-    // Animate use case items on scroll
-    const useCaseItems = document.querySelectorAll('.use-case-item');
-    useCaseItems.forEach(item => {
-        item.style.opacity = '0';
-        item.style.transform = 'translateY(30px)';
-        item.style.transition = 'all 0.6s ease';
-        fadeInObserver.observe(item);
-    });
-
     // Animate testimonial cards on scroll
     const testimonialCards = document.querySelectorAll('.testimonial-card');
     testimonialCards.forEach((card, index) => {
@@ -276,20 +264,6 @@ function initAnimations() {
         card.style.transition = `all 0.6s ease ${index * 0.15}s`;
         fadeInObserver.observe(card);
     });
-
-    // Button Pulse Animation for Premium CTA
-    const premiumButton = document.querySelector('.pricing-card-featured .btn-primary-full');
-    if (premiumButton) {
-        const premiumButtonInterval = setInterval(() => {
-            premiumButton.style.animation = 'pulse 0.5s ease';
-            setTimeout(() => {
-                premiumButton.style.animation = '';
-            }, 500);
-        }, 5000);
-
-        // Store interval for cleanup
-        window.premiumButtonInterval = premiumButtonInterval;
-    }
 
     // Add pulse keyframe animation dynamically (only if not already added)
     if (!document.getElementById('pulse-animation-style')) {

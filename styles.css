@@ -664,102 +664,6 @@ p {
     font-size: 1rem;
 }
 
-/* Pricing Cards */
-.pricing-card {
-    background: var(--white);
-    border-radius: var(--border-radius-large);
-    padding: 2.5rem;
-    box-shadow: var(--shadow-md);
-    position: relative;
-    transition: all var(--transition-base);
-}
-
-.pricing-card:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-xl);
-}
-
-.pricing-card-featured {
-    border: 2px solid var(--accent);
-    box-shadow: var(--shadow-colored);
-    background: linear-gradient(to bottom, rgba(59, 130, 246, 0.02), var(--white));
-}
-
-.pricing-badge {
-    position: absolute;
-    top: -12px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: var(--gradient-primary);
-    color: var(--white);
-    padding: 0.5rem 1rem;
-    border-radius: 2rem;
-    font-size: 0.875rem;
-    font-weight: var(--font-weight-semibold);
-    animation: pulse 2s ease-in-out infinite;
-}
-
-.pricing-title {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-    text-align: center;
-}
-
-.pricing-price {
-    text-align: center;
-    margin-bottom: 2rem;
-}
-
-.price-amount {
-    font-size: 3rem;
-    font-weight: var(--font-weight-extrabold);
-    color: var(--dark);
-}
-
-.price-period {
-    font-size: 1rem;
-    color: var(--gray-600);
-}
-
-.pricing-features {
-    list-style: none;
-    margin-bottom: 2rem;
-}
-
-.pricing-features li {
-    padding: 0.75rem 0;
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-}
-
-.pricing-features li::before {
-    content: '✓';
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 24px;
-    height: 24px;
-    border-radius: 50%;
-    background: var(--success);
-    color: var(--white);
-    font-weight: var(--font-weight-bold);
-    flex-shrink: 0;
-}
-
-.pricing-features .feature-limited::before {
-    content: '⚠';
-    background: var(--warning);
-}
-
-.trial-note {
-    text-align: center;
-    font-size: 0.875rem;
-    color: var(--gray-600);
-    margin-top: 1rem;
-    margin-bottom: 0;
-}
-
 /* Testimonial Cards */
 .testimonial-card {
     background: var(--white);
@@ -1121,22 +1025,6 @@ p {
     margin-top: 1rem;
 }
 /* ===================================
-   Pricing Section
-   ================================== */
-
-.pricing {
-    padding: var(--section-padding) 0;
-    background: var(--white);
-}
-
-.pricing-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
-    max-width: 900px;
-    margin: 0 auto;
-}
-/* ===================================
    Testimonials / Social Proof Section
    ================================== */
 
@@ -1185,74 +1073,6 @@ p {
     text-align: center;
 }
 
-/* Use Cases Section */
-.use-cases {
-    padding: var(--section-padding) 0;
-    background: var(--white);
-}
-
-.use-case-item {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    align-items: center;
-    margin-bottom: 4rem;
-}
-
-.use-case-item:last-child {
-    margin-bottom: 0;
-}
-
-.use-case-reverse {
-    direction: rtl;
-}
-
-.use-case-reverse > * {
-    direction: ltr;
-}
-
-.use-case-image {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.use-case-icon {
-    width: 150px;
-    height: 150px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: var(--light);
-    border-radius: var(--border-radius-large);
-    color: var(--accent);
-}
-
-.use-case-content h3 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-}
-
-.use-case-content p {
-    font-size: 1.125rem;
-    color: var(--gray-600);
-    margin-bottom: 1.5rem;
-}
-
-.use-case-features {
-    list-style: none;
-    display: flex;
-    gap: 1rem;
-}
-
-.use-case-features li {
-    padding: 0.5rem 1rem;
-    background: var(--light);
-    border-radius: 0.5rem;
-    color: var(--gray-700);
-    font-size: 0.875rem;
-    font-weight: var(--font-weight-medium);
-}
 /* ===================================
    FAQ Section
    ================================== */
@@ -1784,17 +1604,6 @@ button:focus {
         grid-template-columns: repeat(2, 1fr);
     }
 
-    .pricing-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .use-case-item,
-    .use-case-reverse {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-        direction: ltr;
-    }
-
     .testimonials-grid {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -2211,15 +2020,6 @@ button:focus {
         width: 132px;
         height: 44px;
         padding: 4px;
-    }
-
-    /* Pricing cards - more compact */
-    .pricing-card {
-        padding: 2rem 1.5rem;
-    }
-
-    .price-amount {
-        font-size: 2.5rem;
     }
 
     /* Testimonials - more compact */

@@ -54,7 +54,7 @@
     }
 }
 
-/* Pulse animation for pricing badge */
+/* Pulse animation for FAQ badge */
 @keyframes pulse {
     0%, 100% {
         transform: scale(1);

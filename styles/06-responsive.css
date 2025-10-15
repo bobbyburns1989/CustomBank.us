@@ -29,17 +29,6 @@
         grid-template-columns: repeat(2, 1fr);
     }
 
-    .pricing-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .use-case-item,
-    .use-case-reverse {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-        direction: ltr;
-    }
-
     .testimonials-grid {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -456,15 +445,6 @@
         width: 132px;
         height: 44px;
         padding: 4px;
-    }
-
-    /* Pricing cards - more compact */
-    .pricing-card {
-        padding: 2rem 1.5rem;
-    }
-
-    .price-amount {
-        font-size: 2.5rem;
     }
 
     /* Testimonials - more compact */

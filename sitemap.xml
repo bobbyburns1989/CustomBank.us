@@ -8,14 +8,6 @@
         <priority>1.0</priority>
     </url>
 
-    <!-- Use Cases -->
-    <url>
-        <loc>https://www.custombank.us/use-cases.html</loc>
-        <lastmod>2025-10-10</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-
     <!-- Privacy Policy -->
     <url>
         <loc>https://www.custombank.us/privacy.html</loc>

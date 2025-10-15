@@ -7,6 +7,90 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Removed - 2025-10-15
+
+#### Complete Use Cases Section Removal
+**Problem:** Use cases page (use-cases.html) was deleted in commit `1d0d61b`, but remnants remained in CSS, JavaScript, sitemap, and documentation files.
+
+**Solution:**
+1. **CSS Cleanup**
+   - Removed `.use-cases` section styling from `styles.css` (68 lines removed)
+   - Removed `.use-case-item` styling from `styles/04-sections.css` (68 lines removed)
+   - Removed responsive media query references from `styles/06-responsive.css` (6 lines removed)
+   - Total CSS reduction: 142 lines
+
+2. **JavaScript Cleanup**
+   - Removed `.use-case-item` animation code from `script.js` (lines 262-269)
+   - Removed Intersection Observer registration for use case items
+
+3. **Sitemap Cleanup**
+   - Removed `use-cases.html` entry from `sitemap.xml`
+   - Updated SEO sitemap to reflect current site structure
+
+4. **Documentation Cleanup**
+   - Deleted `USE_CASES_REVAMP_PLAN.md` file
+   - Updated CHANGELOG.md with removal documentation
+
+**Status:** All use cases references completely removed from codebase. Navigation now shows: Features, FAQ, Privacy, Terms.
+
+**Files Modified:**
+- `styles.css` (removed lines 1188-1255, removed media query references)
+- `styles/04-sections.css` (removed lines 207-274)
+- `styles/06-responsive.css` (removed lines 36-41)
+- `script.js` (removed lines 262-269)
+- `sitemap.xml` (removed lines 11-17)
+- `CHANGELOG.md` (documented removal)
+
+**Files Deleted:**
+- `USE_CASES_REVAMP_PLAN.md`
+
+**Related Commit:**
+- `1d0d61b` - Remove use cases page and simplify navigation (HTML deletion)
+
+---
+
+#### Complete Pricing Section Removal
+**Problem:** Pricing section was removed from the website in commit `56b125f` to create a cleaner conversion flow, but remnants remained in CSS, JavaScript, and documentation files.
+
+**Solution:**
+1. **CSS Cleanup (Main Stylesheet)**
+   - Removed `.pricing-card` component styles from `styles.css` (95 lines removed)
+   - Removed `.pricing` section styling from `styles.css` (15 lines removed)
+   - Removed responsive pricing styles from `styles.css` tablet breakpoint (3 lines removed)
+   - Removed responsive pricing styles from `styles.css` mobile breakpoint (8 lines removed)
+   - Total main stylesheet reduction: 121 lines
+
+2. **CSS Cleanup (Modular Files)**
+   - Removed `.pricing-card` components from `styles/03-components.css` (95 lines removed)
+   - Removed `.pricing` section from `styles/04-sections.css` (16 lines removed)
+   - Removed responsive pricing grid from `styles/06-responsive.css` tablet breakpoint (3 lines removed)
+   - Removed responsive pricing cards from `styles/06-responsive.css` mobile breakpoint (8 lines removed)
+   - Updated comment in `styles/main.css` to remove pricing reference
+   - Updated animation comment in `styles/05-animations.css` from "pricing badge" to "FAQ badge"
+   - Total modular CSS reduction: 122 lines
+
+3. **JavaScript Cleanup**
+   - Removed premium button pulse animation code from `script.js` (lines 271-283)
+   - Removed premium button interval cleanup code from `script.js` (lines 86-88)
+   - Total JavaScript reduction: 16 lines
+
+**Status:** All pricing references completely removed from codebase. Total reduction: 259 lines of code.
+
+**Files Modified:**
+- `styles.css` (removed 121 lines)
+- `styles/03-components.css` (removed 95 lines)
+- `styles/04-sections.css` (removed 16 lines)
+- `styles/06-responsive.css` (removed 11 lines)
+- `styles/main.css` (updated comment)
+- `styles/05-animations.css` (updated comment)
+- `script.js` (removed 16 lines)
+- `CHANGELOG.md` (documented removal)
+
+**Related Commit:**
+- `56b125f` - Remove pricing section for cleaner conversion flow (HTML deletion)
+
+---
+
 ### Changed - 2025-10-14
 
 #### Mobile Navigation Menu Cleanup & Verification
@@ -16,7 +100,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 1. **Verified Pricing Link Removal**
    - Confirmed "Pricing" link completely removed from mobile menu (lines 348-447)
    - Grep search confirmed no "Pricing" references in index.html
-   - Mobile menu now shows: Features, Use Cases, FAQ, Privacy, Terms
+   - Mobile menu now shows: Features, FAQ, Privacy, Terms
 
 2. **Verified Social Media Links**
    - Instagram and TikTok links confirmed present (lines 421-436)
@@ -26,7 +110,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 3. **Visual Hierarchy Confirmed**
    - Navigation properly organized with dividers
    - Grouped into logical sections:
-     - Product: Features, Use Cases
+     - Product: Features
      - Support: FAQ
      - Legal: Privacy, Terms
      - Download: App Store + Google Play badges
