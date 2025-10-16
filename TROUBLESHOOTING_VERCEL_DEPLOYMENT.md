@@ -15,8 +15,37 @@
 - Cache age was 54+ hours old
 
 **Root Causes Identified:**
-1. **Vercel webhook not triggering** - GitHub pushes not automatically deploying
-2. **Invalid vercel.json configuration** - Regex pattern error blocking manual deployments
+1. **Vercel webhook not triggering** - GitHub pushes not automatically deploying (RECURRING ⚠️)
+2. **Invalid vercel.json configuration** - Regex pattern error blocking manual deployments (FIXED ✅)
+
+---
+
+## ⚡ Quick Fix Checklist (When Webhook Fails Again)
+
+**Symptoms:** Latest commits not showing on live site after 10+ minutes
+
+**Fast Diagnosis:**
+```bash
+# Check cache age (should be < 60 seconds if deploying)
+curl -sI https://www.custombank.us | grep age
+
+# Get latest commit hash
+git log --oneline -1
+```
+
+**Quick Fix (5 minutes):**
+1. Copy the commit hash from `git log`
+2. Vercel Dashboard → Deployments → "Create Deployment"
+3. Paste commit hash (e.g., `ece6a75`)
+4. Click Deploy
+
+**Permanent Fix (Recommended):**
+1. Vercel Dashboard → Settings → Git
+2. Disconnect GitHub repository
+3. Reconnect GitHub repository
+4. This recreates the webhook
+
+**Note:** Manual deployment is a workaround. The webhook issue will recur until permanently fixed.
 
 ---
 
@@ -285,6 +314,29 @@ Contact: https://vercel.com/support
 
 ---
 
-**Last Updated:** October 15, 2025
-**Successful Resolution:** Deployment 99xn6A6cW (commit 6c9a1dc)
-**Total Commits to Fix:** 2 (684104e navigation cleanup, 6c9a1dc vercel.json fix)
+## 🔄 Recurring Issues Log
+
+### October 16, 2025 - Webhook Issue Recurred
+**Commits Affected:**
+- `d30d393` - Add CustomApps navigation link
+- `ece6a75` - SEO optimizations (image WebP, review schema, font deferral)
+
+**Symptoms:**
+- Cache age: 2,370 seconds (39.5 minutes)
+- Latest commits not deploying automatically
+- vercel.json is correct (no configuration error this time)
+
+**Root Cause:** Webhook still not triggering deployments
+
+**Solution:** Manual deployment required
+- Use "Create Deployment" with commit hash `ece6a75`
+- Consider permanently fixing webhook (disconnect/reconnect GitHub)
+
+**Status:** 🟡 Ongoing - Webhook issue is chronic, may require manual deployments until permanently fixed
+
+---
+
+**Last Updated:** October 16, 2025
+**Initial Resolution:** Deployment 99xn6A6cW (commit 6c9a1dc) - Oct 15, 2025
+**Recurring Issue:** Webhook failures requiring manual deployment - Oct 16, 2025
+**Total Occurrences:** 2 (Oct 15 initial, Oct 16 recurrence)
