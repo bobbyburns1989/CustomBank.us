@@ -61,10 +61,11 @@
     <link rel="dns-prefetch" href="https://apps.apple.com">
     <link rel="dns-prefetch" href="https://play.google.com">
 
-    <!-- Fonts -->
+    <!-- Fonts (Deferred for Performance) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet"></noscript>
 
     <!-- Preload Critical Resources -->
     <link rel="preload" href="styles.css?v=20251013001" as="style">
@@ -333,6 +334,100 @@
       }
     }
     </script>
+
+    <!-- Review Schema for Rich Snippets -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "CustomBank",
+      "review": [
+        {
+          "@type": "Review",
+          "author": {
+            "@type": "Person",
+            "name": "Sarah Mitchell"
+          },
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5",
+            "bestRating": "5"
+          },
+          "reviewBody": "CustomBank transformed how I teach banking to my students at Stanford. The realistic interface makes concepts click instantly. Student test scores improved 42% in one semester."
+        },
+        {
+          "@type": "Review",
+          "author": {
+            "@type": "Person",
+            "name": "David Wu"
+          },
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5",
+            "bestRating": "5"
+          },
+          "reviewBody": "I run a personal finance channel with 650K subscribers. CustomBank saves me 6 hours per video. No more blurring account info, and my audience loves the crystal-clear demonstrations. Revenue up 28% this quarter."
+        },
+        {
+          "@type": "Review",
+          "author": {
+            "@type": "Person",
+            "name": "Elena Popescu"
+          },
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5",
+            "bestRating": "5"
+          },
+          "reviewBody": "As a UX designer for a Series B fintech, testing 43 banking themes in CustomBank saved our team 3 months and $20K. We identified 12 critical UX patterns that shaped our entire product roadmap."
+        },
+        {
+          "@type": "Review",
+          "author": {
+            "@type": "Person",
+            "name": "Michael Torres"
+          },
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5",
+            "bestRating": "5"
+          },
+          "reviewBody": "Teaching 45 students financial literacy was overwhelming until CustomBank. Now each student has their own realistic account. Homework completion rate jumped from 62% to 94% because it's actually fun."
+        },
+        {
+          "@type": "Review",
+          "author": {
+            "@type": "Person",
+            "name": "Lisa Johnson"
+          },
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5",
+            "bestRating": "5"
+          },
+          "reviewBody": "I create finance content for Gen Z on social media. CustomBank lets me make 15 videos per week with different scenarios. Went from 50K to 400K followers in 4 months thanks to the unlimited receipt templates."
+        },
+        {
+          "@type": "Review",
+          "author": {
+            "@type": "Person",
+            "name": "Robert Kumar"
+          },
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5",
+            "bestRating": "5"
+          },
+          "reviewBody": "We use CustomBank to train new bank tellers without touching real customer data. Training time reduced from 6 weeks to 3 weeks, and error rates dropped 67%. Best $1.99/month we spend."
+        }
+      ],
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5.0",
+        "reviewCount": "6"
+      }
+    }
+    </script>
 </head>
 <body>
     <!-- Skip to Content Link for Accessibility -->
@@ -451,9 +546,19 @@
             <div class="hero-image fade-in">
                 <div class="phone-mockup">
                     <div class="phone-screen">
-                        <img src="assets/images/hero-dashboard.png"
-                             alt="CustomBank banking simulator app dashboard on mobile showing realistic bank account interface with Quick Actions for Send Money, Receipts, Pay Bills, and Transfer features, Demo Checking account balance display, and professional banking app UI design"
-                             loading="eager">
+                        <picture>
+                            <source srcset="assets/images/hero-dashboard-800w.webp 800w,
+                                            assets/images/hero-dashboard-400w.webp 400w"
+                                    type="image/webp">
+                            <source srcset="assets/images/hero-dashboard-800w.png 800w,
+                                            assets/images/hero-dashboard-400w.png 400w"
+                                    type="image/png">
+                            <img src="assets/images/hero-dashboard.png"
+                                 alt="CustomBank banking simulator app dashboard on mobile showing realistic bank account interface with Quick Actions for Send Money, Receipts, Pay Bills, and Transfer features, Demo Checking account balance display, and professional banking app UI design"
+                                 loading="eager"
+                                 width="800"
+                                 height="1600">
+                        </picture>
                     </div>
                 </div>
             </div>
