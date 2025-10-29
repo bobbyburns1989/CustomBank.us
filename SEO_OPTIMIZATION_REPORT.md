@@ -437,7 +437,7 @@ Add these phrases naturally to existing copy:
   "aggregateRating": {
     "@type": "AggregateRating",
     "ratingValue": "4.6",
-    "ratingCount": "50000",
+    "ratingCount": "100000",
     "bestRating": "5",
     "worstRating": "1"
   },
@@ -453,7 +453,7 @@ Add these phrases naturally to existing copy:
         "ratingValue": "5",
         "bestRating": "5"
       },
-      "reviewBody": "CustomBank transformed how I teach banking to my students at Stanford. The realistic interface makes concepts click instantly. Student test scores improved 42% in one semester."
+      "reviewBody": "CustomBank transformed how I teach banking to my students at Stanford. The realistic interface makes concepts click instantly. Student test scores improved significantly in one semester."
     }
     // Add 5-6 more testimonials from index.html lines 393-481
   ]
@@ -657,7 +657,7 @@ I noticed your excellent financial literacy course at [School]. I wanted to shar
 Key Features:
 - No real money required (100% safe for students)
 - 43 authentic bank themes
-- Used by 50,000+ students and teachers
+- Used by 100,000+ students and teachers
 - FERPA compliant (no student data collection)
 
 Would you be interested in trying it with your class? I'd love to feature your feedback on our website.
@@ -676,7 +676,7 @@ Founder, CustomBank
 ### 16. 📰 Create Press Release for Major Updates
 
 **Newsworthy Angles:**
-- "50,000 Students Using CustomBank for Financial Literacy"
+- "100,000 Students Using CustomBank for Financial Literacy"
 - "New Banking Simulator Helps Teachers Teach Real-World Money Skills"
 - "Free App Lets Users Practice Banking Without Risk"
 
