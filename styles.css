@@ -295,20 +295,19 @@ p {
     display: inline-block;
     transition: all var(--transition-base);
     line-height: 0;
-    width: 168px;
-    height: 56px;
-    background: #000000;
-    border-radius: 8px;
-    padding: 4px;
     box-sizing: border-box;
 }
 
 .store-badge img {
-    height: 100% !important;
-    width: 100% !important;
-    object-fit: contain;
-    display: block !important;
-    border-radius: 6px;
+    height: 58px;
+    width: auto;
+    display: block;
+    vertical-align: middle;
+}
+
+/* Make Google Play badge larger to match App Store badge visually */
+.store-badge img[src*="google-play"] {
+    height: 82px;
 }
 
 .store-badge:hover {
@@ -944,6 +943,7 @@ p {
     display: flex;
     gap: 1rem;
     flex-wrap: wrap;
+    align-items: center;
 }
 
 .separator {
@@ -1129,6 +1129,7 @@ p {
     gap: 1rem;
     margin-bottom: 1.5rem;
     flex-wrap: wrap;
+    align-items: center;
 }
 
 .cta .btn-primary {
@@ -1787,7 +1788,7 @@ button:focus {
     .store-badge {
         width: 144px;
         height: 48px;
-        padding: 4px;
+        padding: 0;
     }
 
     .faq-grid {
@@ -1838,7 +1839,7 @@ button:focus {
     .cta-buttons .store-badge {
         width: 156px;
         height: 52px;
-        padding: 4px;
+        padding: 0;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
         transition: all 0.3s ease;
     }
@@ -2019,7 +2020,7 @@ button:focus {
     .store-badge {
         width: 132px;
         height: 44px;
-        padding: 4px;
+        padding: 0;
     }
 
     /* Testimonials - more compact */
@@ -2082,7 +2083,7 @@ button:focus {
     .cta-buttons .store-badge {
         width: 144px;
         height: 48px;
-        padding: 4px;
+        padding: 0;
     }
 
     .trial-badge {
